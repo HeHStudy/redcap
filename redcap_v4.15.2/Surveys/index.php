@@ -58,9 +58,18 @@ if (isset($_GET['__passthru']) && !empty($_GET['__passthru']))
 $objHtmlPage = new HtmlPage();
 $objHtmlPage->addExternalJS(APP_PATH_JS . "base.js");
 $objHtmlPage->addExternalJS(APP_PATH_JS . "fontsize.js");
+$objHtmlPage->addStylesheet("bootstrap.css", 'screen,print'); //Added to enable Christa's popover
 $objHtmlPage->addStylesheet("smoothness/jquery-ui-".JQUERYUI_VERSION.".custom.css", 'screen,print');
 $objHtmlPage->addStylesheet("style.css", 'screen,print');
 $objHtmlPage->addStylesheet("survey.css", 'screen,print');
+$objHtmlPage->addStylesheet("pickle/button_mini_grey/_stylesheet.css", 'screen,print');
+//$objHtmlPage->addStylesheet("pickle/blue_button/_stylesheet.css", 'screen,print');
+//$objHtmlPage->addStylesheet("pickle/black_line/_stylesheet.css", 'screen,print');
+//$objHtmlPage->addStylesheet("pickle/plastic_player/_stylesheet.css", 'screen,print');
+$objHtmlPage->addExternalJS(APP_PATH_JS . "pickle.js");
+
+//For Christa's bootsrap inclusions which come at end of page and allow popover see redcap_v45.15.2/Classes/HtmpPage.php
+
 // Mobile: Add mobile-specific stylesheets and CSS3 conditions to detect small browsers
 if ($isMobileDevice)
 {
@@ -230,6 +239,7 @@ if ($save_and_return && !isset($_POST['submit-action']) && (isset($_GET['__retur
 						</div>";
 			}
 		}
+		
 		$objHtmlPage->PrintFooter();
 		exit;
 	}
@@ -915,8 +925,9 @@ $(function() {
 			<?php echo $title_logo ?>
 		</td>
 		<td valign="top" id="changeFont" style="padding-top:7px;text-align:right;width:75px;position:relative;color:#666;font-family:tahoma;font-size:11px;">
-			<span style="white-space:nowrap;"><?php echo $lang['survey_218'] ?></span><br/>
+			<!-- hide resize <span style="white-space:nowrap;"><?php echo $lang['survey_218'] ?></span><br/>
 			<span style="white-space:nowrap;"><a href="javascript:;" class="increaseFont"><img src="<?php echo APP_PATH_IMAGES ?>font_add.png" class="imgfix"></a>&nbsp;&nbsp;|&nbsp;<a href="javascript:;" class="decreaseFont"><img src="<?php echo APP_PATH_IMAGES ?>font_delete.png" class="imgfix"></a></span>
+			-->
 		</td>
 		<?php 			
 		//Give note at top for public surveys if user is returning

@@ -251,7 +251,9 @@ class HtmlPage
 		
 		// Initialize windows-resize and other basic javascript
 		?><script type="text/javascript">$(function(){ initHomePage(); }); </script><?php
-		
+		//print '<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>';  /*Don't use. It breaks the submit errors popup
+		print '<script type="text/javascript" src="' . APP_PATH_JS . 'bootstrap.min.js"></script>'. "\n";
+		print '<script type="text/javascript" src="' . APP_PATH_JS . 'bootstrap-popover.js"></script>'. "\n";
 		print '</body></html>';
         
     }

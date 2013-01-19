@@ -1,3 +1,52 @@
+@charset "UTF-8";
+/* CSS Document */
+
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default
+{border:none !important;}
+
+@font-face {
+    font-family: 'museo_slab500';
+    src: url('fonts/museo_slab_500-webfont-webfont.eot');
+    src: url('fonts/museo_slab_500-webfont-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/museo_slab_500-webfont-webfont.woff') format('woff'),
+         url('fonts/museo_slab_500-webfont-webfont.ttf') format('truetype'),
+         url('fonts/museo_slab_500-webfont-webfont.svg#museo_slab500') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'proxima_nova_ltlight';
+    src: url('fonts/proximanova-light-webfont.eot');
+    src: url('fonts/proximanova-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/proximanova-light-webfont.woff') format('woff'),
+         url('fonts/proximanova-light-webfont.ttf') format('truetype'),
+         url('fonts/proximanova-light-webfont.svg#proxima_nova_ltlight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'proxima_novabold';
+    src: url('fonts/proxima_nova_bold-webfont.eot');
+    src: url('fonts/proxima_nova_bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/proxima_nova_bold-webfont.woff') format('woff'),
+         url('fonts/proxima_nova_bold-webfont.ttf') format('truetype'),
+         url('fonts/proxima_nova_bold-webfont.svg#proxima_novabold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'proxima_novaregular';
+    src: url('fonts/proximanova-reg-webfont-webfont.eot');
+    src: url('fonts/proximanova-reg-webfont-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/proximanova-reg-webfont-webfont.woff') format('woff'),
+         url('fonts/proximanova-reg-webfont-webfont.ttf') format('truetype'),
+         url('fonts/proximanova-reg-webfont-webfont.svg#proxima_novaregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
 
 
 /*FLEXIGRID CSS */
@@ -742,10 +791,10 @@ body {
 }
 table { text-align:left; }
 td { text-align:left; }
-input, textarea, select, button {
-    margin: 0__qem;
-}
-input[type="button"], input[type="submit"], button {padding:0 4px;}
+button, input, textarea, select {
+    margin: 0__qem;}
+
+input[type="button"], input[type="submit"], button {padding:0 4px; }
 input[type="radio"], input[type="checkbox"] {
 	margin: 2px 0.4ex;
     -khtml-user-select: element;
@@ -760,11 +809,18 @@ h3 { font-size: 16px; text-align:left; margin: 10px 0 10px 0;}
 h1 { font-size: 14px; text-align:left; }
 /* Fix in case preceding elements have float */
 p,table,h1,h2,h3,h4,h5,h6 {clear:both;}
+/*
+A:link { font-family: Arial; font-size: 15px; color: #fff; text-decoration: none; text-align:left;  }
+A:visited { font-family: Arial; font-size: 15px; color: #fff; text-decoration: none; text-align:left; }
+A:active { font-family: Arial; font-size: 15px; color: #fff; text-decoration: none; text-align:left; }
+A:hover {font-family: Arial; ffont-size: 15px; color: #fff; text-decoration: none; text-align:left; }
+*/
+A:link { font-family: Arial; font-size: 15px; color: #000; text-decoration: none; text-align:left;  }
+A:visited { font-family: Arial; font-size: 15px; color: #000; text-decoration: none; text-align:left; }
+A:active { font-family: Arial; font-size: 15px; color: #000; text-decoration: none; text-align:left; }
+A:hover {font-family: Arial; ffont-size: 15px; color: #000; text-decoration: none; text-align:left; }
 
-A:link { font-family: Arial; font-size: 12px; color: #000066; text-decoration: none; text-align:left; }
-A:visited { font-family: Arial; font-size: 12px; color: #000066; text-decoration: none; text-align:left; }
-A:active { font-family: Arial; font-size: 12px; color: #000066; text-decoration: none; text-align:left; }
-A:hover {font-family: Arial; font-size: 12px; color: red; text-decoration: underline; text-align:left; }
+
 
 .label a:link, .label a:visited, .label a:active, .label a:hover { 
 	text-decoration: underline;  
@@ -775,7 +831,7 @@ A:hover {font-family: Arial; font-size: 12px; color: red; text-decoration: under
 .spacer { margin: 8px 0 8px 0; padding:0; border-top:1px solid #aaa; max-width:700px; }
 .space { margin: 8px 0 8px 0; padding:0;}
 
-.imgfix  { position:relative; top:3px;}
+.imgfix  { position:relative; top:3px; margin:5px 0 5px 5px;;}
 .imgfix2 { position:relative; top:2px; }
 .imgfix1 { position:relative; top:1px; }
 
@@ -793,21 +849,21 @@ A:hover {font-family: Arial; font-size: 12px; color: red; text-decoration: under
 .hang2 a:active{ font-size: 12px; }
 .hang2 a:hover { font-size: 12px; }
 
-.frmrd   { text-indent: -2.3em; margin-left: 2.3em; padding: 1px; font-weight: normal; }
+.frmrd   { text-indent: -2.3em; margin-left: 2.3em; padding:5px; font-weight: normal; font-size:18px; }
 .frmrdh { padding: 1px 15px 1px 0px; font-weight: normal;}
 .frmrd0 {height: 0px; width: 0px; position: absolute; left: -20px;}
 
-A.radio_reset:link  { font-family: Verdana; font-size: 8pt; color: #800000; text-decoration: none; text-align:left; }
+A.radio_reset:link  { font-family: Verdana; font-size: 8pt; color: #66ccff; text-decoration: none; text-align:left; }
 
-.compare A:link { font-family: Verdana; font-size: 8pt; color: #800000; text-decoration: none; text-align:left; }
-.compare A:visited { font-family: Verdana; font-size: 8pt; color: #800000; text-decoration: none; text-align:left; }
-.compare A:active { font-family: Verdana; font-size: 8pt; color: #800000; text-decoration: none; text-align:left; }
+.compare A:link { font-family: Verdana; font-size: 8pt; color: #66ccff; text-decoration: none; text-align:left; }
+.compare A:visited { font-family: Verdana; font-size: 8pt; color: #66ccff; text-decoration: none; text-align:left; }
+.compare A:active { font-family: Verdana; font-size: 8pt; color: #66ccff; text-decoration: none; text-align:left; }
 .compare A:hover {font-family: Verdana; font-size: 8pt; color: #000066; text-decoration: none; text-align:left; }
 
-A.cclink:link 	{font-family: Verdana; font-size: 8pt; text-decoration: none; color: #000066; text-align:left; }
-A.cclink:visited 	{font-family: Verdana; font-size: 8pt; text-decoration: none; color: #000066; text-align:left; }
-A.cclink:active 	{font-family: Verdana; font-size: 8pt; text-decoration: none; color: #000066; text-align:left; }
-A.cclink:hover 	{font-family: Verdana; font-size: 8pt; text-decoration: none; color: red; text-align:left; }
+A.cclink:link 	{font-family: Verdana; font-size: 11pt!important; text-decoration: none; color: #fff; text-align:left; padding:6px 15px; background:url(../images/reset.jpg) top center no-repeat; text-transform:capitalize; }
+A.cclink:visited 	{font-family: Verdana; font-size: 11pt!important; text-decoration: none; color: #fff; text-align:left; padding:6px 15px; background:url(../images/reset.jpg) top center no-repeat; text-transform:capitalize;}
+A.cclink:active 	{font-family: Verdana; font-size: 11pt!important; text-decoration: none; color: #fff; text-align:left; padding:6px 15px; background:url(../images/reset.jpg) top center no-repeat; text-transform:capitalize;}
+A.cclink:hover 	{font-family: Verdana; font-size: 11pt!important; text-decoration: none; color: #fff; text-align:left; padding:6px 15px; text-transform:capitalize; background:url(../images/reset_hover.jpg) top center no-repeat; }
 
 .note          { font-weight:normal;padding:2px 0 1px;color: #000066; font-size: 7pt; font-family: Verdana, Arial; width: 320px; }
 .required_cell { font-family: Verdana; font-size: 8pt; height: 18px }
@@ -844,20 +900,22 @@ A.cclink:hover 	{font-family: Verdana; font-size: 8pt; text-decoration: none; co
                  padding: 2px; border: 0 solid #CCCCCC }
 
 .label, .label_matrix { 
-	font-family: Arial,Helvetica,sans-serif;
-	font-size: 12px;
-    background: #F0F0F0 url(../images/label-bg.gif) repeat-x scroll 0 0;
-	padding: 2px; border: 1px solid #CCCCCC; font-weight: bold; padding-left: 5px; padding-right: 5px; }
+	font-family: font-family:"proxima_novaregular", Arial, Helvetica, sans-serif;
+	font-size: 20px;
+	line-height:26px;
+	color:#424242;
+    /*background: #F0F0F0 url(../images/label-bg.gif) repeat-x scroll 0 0;*/
+	padding: 2px; border: none; font-weight: bold; padding-left: 5px; padding-right: 5px; }
 .data, .data_matrix  { 
 	font-family: Arial,Helvetica,sans-serif;
 	font-size: 12px;
 	background: #FAFAFA url(../images/data-bg.gif) repeat-x scroll 0 0;
-    padding: 2px; border: 1px solid #CCCCCC;
+    padding: 2px; none;
 }
 .data2  { 
 	font-family: Verdana; 
 	font-size: 8pt; 
-    border: 1px solid #CCCCCC; 
+    border: none; 
 	padding:4px 10px;
 	font-weight:normal;
 	background:#fafafa;
@@ -1071,16 +1129,16 @@ tr.hdr2 td {
 
 .red{
 	font: normal 13px Arial, Helvetica, sans-serif;
-	padding: 6px;
+	padding: 6px 6px 6px 6px;
 	border: 1px solid red;
-	color: #800000;
+	color: #66ccff;
 	max-width: 700px;
 	background: #FFE1E1 url(../images/red-bg.gif) repeat-x scroll 0 0;
 }
 .red a:link, .red a:visited, .red a:active, .red a:hover { font: normal 13px Arial, Helvetica, sans-serif; text-decoration:underline; }
 .green{
 	font: normal 13px Arial, Helvetica, sans-serif;
-	padding: 6px;
+	padding: 6px 6px 6px 6px;
 	border: 1px solid #048804;
 	color: #012B01;
 	max-width: 700px;
@@ -1089,7 +1147,7 @@ tr.hdr2 td {
 .green a:link, .green a:visited, .green a:active, .green a:hover { font: normal 13px Arial, Helvetica, sans-serif; text-decoration:underline; }
 .darkgreen{
 	font: normal 13px Arial, Helvetica, sans-serif;
-	padding: 6px;
+	padding: 6px 6px 6px 6px;
 	border: 1px solid #A5CC7A;
 	color: #333333;
 	max-width: 700px;
@@ -1098,7 +1156,7 @@ tr.hdr2 td {
 .darkgreen a:link, .darkgreen a:visited, .darkgreen a:active, .darkgreen a:hover { font: normal 13px Arial, Helvetica, sans-serif; text-decoration:underline; }
 .blue{
 	font: normal 13px Arial, Helvetica, sans-serif;
-	padding: 6px;
+	padding: 6px 6px 6px 6px;
 	border: 1px solid #A7C3F1;
 	color: #000066;
 	max-width: 700px;
@@ -1107,7 +1165,7 @@ tr.hdr2 td {
 .blue a:link, .blue a:visited, .blue a:active, .blue a:hover { font: normal 13px Arial, Helvetica, sans-serif; text-decoration:underline; }
 .yellow{
 	font: normal 13px Arial, Helvetica, sans-serif;
-	padding: 6px;
+	padding: 6px 6px 6px 6px;
 	border: 1px solid #FAD42A;
 	color: #674100;
 	max-width: 700px;
@@ -1116,7 +1174,7 @@ tr.hdr2 td {
 .yellow a:link, .yellow a:visited, .yellow a:active, .yellow a:hover { font: normal 13px Arial, Helvetica, sans-serif; text-decoration:underline; }
 .brown{
 	font: normal 13px Arial, Helvetica, sans-serif;
-	padding: 6px;
+	padding: 6px 6px 6px 6px;
 	border: 1px solid #9B9677;
 	background-color: #E1DFD2;
 	color: #444;
@@ -1125,22 +1183,13 @@ tr.hdr2 td {
 .brown a:link, .brown a:visited, .brown a:active, .brown a:hover { font: normal 13px Arial, Helvetica, sans-serif; text-decoration:underline; }
 .grayed{
 	font: normal 13px Arial, Helvetica, sans-serif;
-	padding: 6px;
+	padding: 6px 6px 6px 6px;
 	border: 1px solid #ccc;
 	color: #aaa;
 	max-width: 700px;
 	background: #ddd;
 }
 .grayed a:link, .grayed a:visited, .grayed a:active, .grayed a:hover { font: normal 13px Arial, Helvetica, sans-serif; text-decoration:underline; }
-.gray{
-	font: normal 13px Arial, Helvetica, sans-serif;
-	padding: 6px;
-	border: 1px solid #ccc;
-	color: #333;
-	max-width: 700px;
-	background: #eee;
-}
-.gray a:link, .grayed a:visited, .grayed a:active, .grayed a:hover { font: normal 13px Arial, Helvetica, sans-serif; text-decoration:underline; }
 
 
 
@@ -1480,7 +1529,7 @@ tr.topdays {
 	font-family: Verdana, Geneva, Arial, helvetica, sans-serif; font-size: 10px; text-align: left;
 }
 .eventinbox a{
-	font-family: Verdana, Geneva, Arial, helvetica, sans-serif; font-size: 9px;	color: #800000;
+	font-family: Verdana, Geneva, Arial, helvetica, sans-serif; font-size: 9px;	color: #66ccff;
 }
 .currentdate {
 	font-family: Verdana, Geneva, Arial, helvetica, sans-serif; font-size: 17px; font-weight: bold;	
@@ -1555,7 +1604,7 @@ a.linkday {
 }
 
 .hlptxt {
-	font-family:Verdana;color:#800000;font-size:12px;
+	font-family:Verdana;color:#66ccff;font-size:12px;
 }
 
 .newdbsub { padding:2px 0 10px 0;color:#666;font-family:tahoma;font-size:11px;width:450px; }
@@ -1828,12 +1877,18 @@ table.metachanges td { padding:2px 3px; }
 	position:relative;
 }
 .x-form-field{
-    margin: 0 0 0 0;
-    font:normal 12px tahoma, arial, helvetica, sans-serif;
+    margin: 5px 0 10px 0;
+    font-family: font-family:"proxima_novaregular", Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	color:#424242;	
 }
+
+.x-form-field select {background: url(../images/arrow.png) no-repeat right #ddd;}
+textarea.x-form-text select {background: url(../images/arrow.png) no-repeat right #ddd;}
+
 .x-form-text, textarea.x-form-field{
-    padding:1px 3px;
-    background:#fff url(../images/default/form/text-bg.gif) repeat-x 0 0;
+    padding:0;
+    background:#F5F5F5 /*url(../images/default/form/text-bg.gif) repeat-x 0 0;*/;
     border:1px solid #B5B8C8;
 }
 textarea.x-form-field {
@@ -1841,15 +1896,14 @@ textarea.x-form-field {
     margin-bottom:-2px; 
 }
 .x-form-text {
-    height:18px;
-    line-height:18px;
-    vertical-align:middle;
-    padding:0 3px; 
-    padding-top:2px; 
-    padding-bottom:0;
+    height:30px !important;
+    line-height:40px !important;
+    vertical-align:middle !important;
+    
 }
 textarea {
-    resize: none;  
+   /* resize: none;  */
+
 }
 
 /* Overwrite some ExtJS-like style */
@@ -1914,7 +1968,7 @@ textarea {
 #googDefSave { visibility:hidden;font-size:11px;color:red;padding-right:5px; }
 #googTransDisclaimer { z-index:9999;font-family:arial;width:250px;top:10;left:0;position:absolute;display:none;text-align:left; padding:8px 6px 8px 10px; }
 #googTransIENotice { display:none; }
-.bledit { color:#800000;padding-left:35px; }
+.bledit { color:#66ccff;padding-left:35px; }
 .configsub { font-weight:normal;font-size:11px; }
 #fileuse_explain { display:none;padding:0 2px 0 8px;color:#888;white-space:normal; }
 
@@ -2040,9 +2094,10 @@ a.plist:link, a.plist:visited, a.plist:active, a.plist:hover{ color:#888;font-si
 }
 
 #groupid-div { text-align: right;color:#444;line-height:1.5em; }
-.jqbutton { color: #333;font-family: Verdana, Arial, sans-serif;font-size:13px;padding: 0px 4px 1px !important; border: solid 1px #aaa; border-right: solid 1px #888; border-bottom: solid 1px #888; color:#333; }
-.jqbuttonmed { color: #333;font-family: Verdana, Arial, sans-serif;font-size:13px;font-size:12px; font-family:arial,tahoma; padding: 1px 4px !important; border: solid 1px #aaa; border-right: solid 1px #888; border-bottom: solid 1px #888; color:#333; }
-.jqbuttonsm { color: #333;font-family: Verdana, Arial, sans-serif;font-size:13px;font-size:9px; font-family:tahoma; padding: 1px 4px 0 !important; border: solid 1px #aaa; border-right: solid 1px #888; border-bottom: solid 1px #888; color:#333; }
+.jqbutton {background:url(../images/submit.jpg) top center no-repeat; width:423px !important; height:174px !important; color:#FFF !important; font-size:12px !important; padding:0 !important; margin:40px 0 -100px 0 !important; overflow:hidden !important; border:none !important;}
+/*.jqbutton { color: #333;font-family: Verdana, Arial, sans-serif;font-size:13px;padding: 1px 5px !important; border: solid 1px #aaa; border-right: solid 1px #888; border-bottom: solid 1px #888; color:#333; }
+.jqbuttonmed { color: #333;font-family: Verdana, Arial, sans-serif;font-size:13px;font-size:12px; font-family:arial,tahoma; padding: 1px 5px !important; border: solid 1px #aaa; border-right: solid 1px #888; border-bottom: solid 1px #888; color:#333; }
+.jqbuttonsm { color: #333;font-family: Verdana, Arial, sans-serif;font-size:13px;font-size:9px; font-family:tahoma; padding: 1px 5px !important; border: solid 1px #aaa; border-right: solid 1px #888; border-bottom: solid 1px #888; color:#333; }*/
 .gearsm { width:9px;height:9px;background: url(../images/gear_small2.png) no-repeat left; }
 
 /* css for timepicker */
@@ -2051,13 +2106,9 @@ a.plist:link, a.plist:visited, a.plist:active, a.plist:hover{ color:#888;font-si
 .ui_tpicker_time { font-weight: bold;}
 .ui-timepicker-div dl dd{ margin: -25px 0 10px 65px; }
 
-.chklist { margin:8px 0;background-color:#fafafa;border:1px solid #ddd;padding:5px 10px;font-size:12px;max-width:700px; }
-.chklisthdr { padding:0 0 3px 0;font-weight:bold;font-size:14px;width:100%; }
+.chklist { margin:13px 0;background-color:#fafafa;border:1px solid #ddd;padding:5px 10px;font-size:12px;max-width:700px; }
+.chklisthdr { padding:0 0 3px 0;border-bottom:1px solid #AAAAAA;font-weight:bold;font-size:14px;width:100%; }
 .chklistbtn { padding-top:9px; color:#666; }
-.chklisttext { padding:5px 0 0;border-top:1px solid #AAAAAA; }
-.chklist_comp { padding:14px 0 3px; }
-.chklist_comp a:link, .chklist_comp a:visited, .chklist_comp a:active, .chklist_comp a:hover { color:#aaa;font-family:tahoma;font-size:9px;text-decoration:underline; }
-.chklisthdr a:link, .chklisthdr a:visited, .chklisthdr a:active, .chklisthdr a:hover { margin-left:10px;text-decoration:underline;color:#800000;font-weight:normal;font-size:11px; }
 
 .subtab { margin:0 5px;padding:2px 8px;color:#222;border:1px solid #ccc; }
 .subtabactive { margin:0 5px;padding:2px 8px;color:#fff;border:1px solid #888;background-color:#999; }
@@ -2065,6 +2116,10 @@ a.plist:link, a.plist:visited, a.plist:active, a.plist:hover{ color:#888;font-si
 
 .surveyTagText { font-weight:normal;font-family:tahoma;font-size:11px;color:#888; }
 
+.chklist_comp { padding:14px 0 3px; }
+.chklist_comp a:link, .chklist_notcomp a:visited, .chklist_notcomp a:active, .chklist_notcomp a:hover { 
+	text-decoration:underline;color:#aaa;font-size:9px;font-family:tahoma; 
+}
 
 /* Adjust font for form fields inside jQuery dialogs */
 .ui-dialog-content, .ui-widget input, .ui-widget select, .ui-widget textarea {
@@ -2103,7 +2158,7 @@ a.plist:link, a.plist:visited, a.plist:active, a.plist:hover{ color:#888;font-si
 table.sldrlbl { width: 275px; }
 .sldrtd { width:275px;padding:15px 5px 5px; }
 .slider_div { width: 280px;margin:3px 0; }
-.sldrmsg { padding:2px 0 3px;text-align:center;color:#800000;font-size:9px;font-weight:normal; }
+.sldrmsg { padding:2px 0 3px;text-align:center;color:#66ccff;font-size:9px;font-weight:normal; }
 .sldrnum { color:#666;font-size:11px;width:20px; }
 div.slider .ui-state-default {
 	background-image:url(../css/blue/images/ui-bg_highlight-hard_75_4471BB_1x100.png);
@@ -2150,7 +2205,7 @@ a.calcDisc:link, a.calcDisc:visited, a.calcDisc:active, a.calcDisc:hover  { font
 
 .code {
 	font-family: "Lucida Console", "Courier New", monospace;
-	color: #800000;
+	color: #66ccff;
 }
 
 div.redcapSimple {
@@ -2201,7 +2256,7 @@ div.redcapField {
 }
 
 div.redcapAppCtrl {
-	margin: 10px 0 25px;
+	margin: 15px 0 25px;
 	padding: 10px;
 	background-color: #EDF2FD;
 	border: 1px solid #A7C3F1;
@@ -2275,10 +2330,10 @@ input.staticInput { vertical-align:middle;margin:0 0 0 8px;background: none repe
 }
 #alreadyRandomizedText { color:green;font-size:10px;padding:0 0 4px; vertical-align:middle;font-weight:normal; }
 .mc_raw_val_fix { padding:1px 0;width:95%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap; }
-.mc_raw_val_fix .rawVal { color:#800000;font-size:14px;padding-right:2px;font-weight:bold; }
+.mc_raw_val_fix .rawVal { color:#66ccff;font-size:14px;padding-right:2px;font-weight:bold; }
 .mc_raw_val_fix b { color:#000;font-size:13px; }
 
-table.matrixHdrs { table-layout:fixed; width: 100%; }
+table.matrixHdrs { table-layout:fixed;  }
 table.matrixHdrs td {
 	font-family:arial,verdana;
 	font-weight:bold;
@@ -2287,9 +2342,9 @@ table.matrixHdrs td {
 	text-align:center;
 	border:0;
 	padding:7px 3px 1px;
-	color: #800000;
+	color: #66ccff;
 }
-.mtxgrpname { color:#800000;font-size:11px;position:relative;top:-4px; }
+.mtxgrpname { color:#66ccff;font-size:11px;position:relative;top:-4px; }
 a.mtxgrpHelp:link, a.mtxgrpHelp:visited, a.mtxgrpHelp:active, a.mtxgrpHelp:hover { margin-left:10px;font-weight:normal;color:#3089D4;font-size:11px; }
 .reqlbl { color:red;font-size:10px;font-weight:normal;font-family:arial; }
 
@@ -2297,14 +2352,14 @@ a.mtxgrpHelp:link, a.mtxgrpHelp:visited, a.mtxgrpHelp:active, a.mtxgrpHelp:hover
 .addFieldMatrixRowDrag { width:20px;padding:4px;border-bottom:1px solid #ddd; }
 .addFieldMatrixRowLabel { font-weight:bold;padding:4px;border-bottom:1px solid #ddd; }
 .addFieldMatrixRowVar { font-weight:bold;width:175px;padding:4px;border-bottom:1px solid #ddd; }
-.addFieldMatrixRowQuesNum { text-align:center;width:55px;padding:4px;border-bottom:1px solid #ddd;font-size:10px;font-weight:bold; }
+.addFieldMatrixRowQuesNum { text-align:center;width:55px;padding:4px;/*border-bottom:1px solid #ddd;*/font-size:10px;font-weight:bold; }
 .addFieldMatrixRowFieldReq { width:55px;text-align:center;padding:4px;border-bottom:1px solid #ddd;font-size:10px;font-weight:bold; }
 .addFieldMatrixRowDel { width:20px;text-align:right;padding:4px;border-bottom:1px solid #ddd; }
 .field_label_matrix { width:95%; }
 .field_name_matrix { width:95%; }
-.addFieldMatrixRowHdr { color:#800000;font-weight:bold;font-size:15px;margin-bottom:15px; }
-table.mtxchoicetable { table-layout:fixed;margin:5px 0 0;width:100%; }
-table.mtxchoicetablechk { table-layout:fixed;margin:5px 0;width:100%; }
+.addFieldMatrixRowHdr { color:#66ccff;font-weight:bold;font-size:15px;margin-bottom:15px; }
+table.mtxchoicetable { table-layout:fixed;margin:5px 0 0;}
+table.mtxchoicetablechk { table-layout:fixed;margin:5px 0; }
 table.mtxchoicetable td.data_mtxchoice, table.mtxchoicetablechk td.data_mtxchoice { padding:0;text-align:center;border:0; }
 table.mtxchoicetable td.data_mtxchoice input[type="radio"], table.mtxchoicetablechk td.data_mtxchoice input[type="radio"], table.mtxchoicetable td.data_mtxchoice input[type="checkbox"], table.mtxchoicetablechk td.data_mtxchoice input[type="checkbox"] { margin-top:0;margin-bottom:0; }
 #div_add_field2, #div_add_field2 input, #div_add_field2 select, #div_add_field2 textarea, #addMatrixPopup, #addMatrixPopup input, #addMatrixPopup select, #addMatrixPopup textarea { font-size: 13px; }
@@ -2323,29 +2378,29 @@ table.mtxchoicetable td.data_mtxchoice input[type="radio"], table.mtxchoicetable
 .cc_info a:link, .cc_info a:visited, .cc_info a:active, .cc_info a:hover{ font-size: 11px; }
 .randomizationDuplLabel { display:none; }
 
-a.help:link, a.help:visited, a.help:active, a.help:hover { font-family:verdana;color:#666;background-color:#fff;border:1px solid #999;font-size: 11px; font-weight:bold;margin-left: 5px; padding: 0px 2px; text-decoration: none; }
-a.help:hover { color:#000;border:1px solid #000; }
-a.help2:link, a.help2:visited, a.help2:active, a.help2:hover { font-family:verdana;color:#fff;background-color:#999;border:1px solid #777;font-size: 11px; font-weight:bold;margin-left: 5px; padding: 0px 2px; text-decoration: none; }
-a.help2:hover { color:#800000; }
+#changeFont span {font-size:14px!important; font-family:Verdana, Arial, Geneva, sans-serif; color:#424242;}
+#valtext_divs, #valregex_divs { display:none; }  /*added to Christa's css to hide the validation text */
+/* //////////// vtip tool tip ////////////// 
 
-.wrap { overflow: visible; white-space: normal; }
-#popupSetUpCondInvites { background-color:#FFFFE4; }
-#valtext_divs, #valregex_divs { display:none; }
-.simpleDialog { display:none;padding:15px 15px 10px !important;line-height:1.4em !important; }
-#reschedule-reminder-dialog-resched-count { font-weight:bold; font-size:14px; }
-#choose_event_div {
-	min-width:300px;
-	background: transparent url(../images/upArrow.png) no-repeat 260px top;
-	position:absolute;
-	padding:9px 0 0;
-	display: none;
-	font-size:11px;
-}
-#choose_event_div_sub {
-	background-color:#FAFAFA;
-	border:1px solid #000000;
-	padding:3px 6px;
-}
-.pkNoDispMsg { display:none;color:red;font-size:11px;}
-.hidden_template_description { display:none;padding:5px; }
-.savedMsg { color:red;font-size:11px;margin-left:8px;visibility:hidden; }
+p#vtip { 
+display: none; 
+position: absolute; 
+padding: 15px; 
+left: 5px; 
+font-size: 13px; 
+line-height:18px;
+color:#232323;
+background-color: #F0F5FB; 
+border: 1px solid #333333; 
+-moz-border-radius: 5px; 
+-webkit-border-radius: 5px; 
+z-index: 9999;
+margin-right:40px;
+margin-left:-20px; }
+
+p#vtip #vtipArrow { position: absolute; top: -10px; left: 25px }
+*/
+a#pops:link, a#pops:visited, a#pops:active, a#pops:hover { text-decoration: none; }  /*get rid of underline for popover*/
+/*
+.tt{border:none; width:27px; overflow:hidden;}
+*/
