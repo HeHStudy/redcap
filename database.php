@@ -5,10 +5,10 @@
 // Replace the values inside the single quotes below with the values for your MySQL configuration. 
 // If not using the default port 3306, then append a colon and port number to the hostname (e.g. $hostname = 'example.com:3307';).
 
-$hostname 	= 'your_mysql_host_name';
-$db 		= 'your_mysql_db_name';
-$username 	= 'your_mysql_db_username';
-$password 	= 'your_mysql_db_password';
+$hostname 	= '127.0.0.1';
+$db 		= 'redcap';
+$username 	= 'redcap';
+$password 	= 'redcap';
 
 // For greater security, you may instead want to place the database connection values in a separate file that is not 
 // accessible via the web. To do this, uncomment the line below and set it as the path to your database connection file
@@ -22,7 +22,7 @@ $password 	= 'your_mysql_db_password';
 // Add a random value for the $salt variable below, preferably alpha-numeric with 8 characters or more. This value wll be 
 // used for data de-identification hashing for data exports. Do NOT change this value once it has been initially set.
 
-$salt = '';
+$salt = '032b6f8aac';
 
 
 //********************************************************************************************************************
