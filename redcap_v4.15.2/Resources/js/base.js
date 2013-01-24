@@ -1,4 +1,3 @@
-// JavaScript Document
 /****************************************************************************************************/
 /*****************Bundled JavaScript Packages**********************************************************/
 /****************************************************************************************************/
@@ -344,9 +343,6 @@ g)}else this.activate(e,this.element.children(".ui-menu-item").filter(!this.acti
 this.activate(e,result)}else this.activate(e,this.element.children(".ui-menu-item").filter(!this.active||this.first()?":last":":first"))},hasScroll:function(){return this.element.height()<this.element.attr("scrollHeight")},select:function(e){this._trigger("selected",e,{item:this.active})}})})(jQuery);
 ;
 
-// create a way to access ui.autocomplete after it gets overridden by the
-// other autocomplete plugin
-$.widget.bridge("ui_autocomplete", $.ui.autocomplete);
 
 /*
  * jQuery UI Button 1.8.12
@@ -800,6 +796,13 @@ var i={};i[g]=(f=="show"?b=="pos"?"+=":"-=":b=="pos"?"-=":"+=")+e;a.animate(i,{q
 b.dequeue()})})}})(jQuery);
 ;
 
+
+
+
+// create a way to access ui.autocomplete after it gets overridden by the
+// other autocomplete plugin
+$.widget.bridge("ui_autocomplete", $.ui.autocomplete);
+
 // Google Chrome Frame install script
 // Copyright (c) 2009 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
@@ -810,56 +813,6 @@ f(a.node);b.id=a.id||(c?c.id||getUid(c):"");b.style.cssText=" "+(a.cssText||"");
 for(var c=document.body;b.firstChild;)c.insertBefore(b.lastChild,c.firstChild);a=m(a);f("chromeFrameIframeHolder").appendChild(a);f("chromeFrameCloseButton").onclick=l}},d={};d.check=function(a){a=a||{};var b=navigator.userAgent,c=/MSIE (\S+); Windows NT/,g=false;if(c.test(b)){if(parseFloat(c.exec(b)[1])<6&&b.indexOf("SV1")<0)g=true}else g=true;if(!g){if(!j){i('.chromeFrameInstallDefaultStyle {width: 800px;height: 600px;position: absolute;left: 50%;top: 50%;margin-left: -400px;margin-top: -300px;}.chromeFrameOverlayContent {position: absolute;margin-left: -400px;margin-top: -300px;left: 50%;top: 50%;border: 1px solid #93B4D9;background-color: white;z-index: 2001;}.chromeFrameOverlayContent iframe {width: 800px;height: 600px;border: none;}.chromeFrameOverlayCloseBar {height: 1em;text-align: right;background-color: #CADEF4;}.chromeFrameOverlayUnderlay {position: absolute;width: 100%;height: 100%;background-color: white;opacity: 0.5;-moz-opacity: 0.5;-webkit-opacity: 0.5;-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";filter: alpha(opacity=50);z-index: 2000;}');
 j=true}document.cookie.indexOf("disableGCFCheck=1")>=0&&l();b=(document.location.protocol=="https:"?"https:":"http:")+"//www.google.com/chromeframe";if(!h()){a.onmissing&&a.onmissing();a.src=a.url||b;b=a.mode||"inline";if(!(a.preventPrompt||0))if(b=="inline")n(a);else b=="overlay"?o(a):window.open(a.src);if(!a.preventInstallDetection)var p=setInterval(function(){if(h()){a.oninstall&&a.oninstall();clearInterval(p);window.location=a.destination||window.location}},2E3)}}};d._force=false;d._forceValue=
 false;d.isAvailable=h;e.CFInstall=d}})(this.ChromeFrameInstallScope||this);
-
-/* 
-$.fn.centerInClient = function(options) {
-    // <summary>Centers the selected items in the browser window. Takes into account scroll position.
-    // Ideally the selected set should only match a single element.
-    // </summary>    
-    // <param name="fn" type="Function">Optional function called when centering is complete. Passed DOM element as parameter</param>    
-    // <param name="forceAbsolute" type="Boolean">if true forces the element to be removed from the document flow 
-    //  and attached to the body element to ensure proper absolute positioning. 
-    // Be aware that this may cause ID hierachy for CSS styles to be affected.
-    // </param>
-    // <returns type="jQuery" />
-    var opt = { forceAbsolute: false,
-                container: window,    // selector of element to center in
-                completeHandler: null
-              };
-    $.extend(opt, options);
-   
-    return this.each(function(i) {
-        var el = $(this);
-        var jWin = $(opt.container);
-        var isWin = opt.container == window;
-
-        // force to the top of document to ENSURE that 
-        // document absolute positioning is available
-        if (opt.forceAbsolute) {
-            if (isWin)
-                el.remove().appendTo("body");
-            else
-                el.remove().appendTo(jWin.get(0));
-        }
-
-        // have to make absolute
-        el.css("position", "absolute");
-
-        // height is off a bit so fudge it
-        var heightFudge = isWin ? 2.0 : 1.8;
-
-        var x = (isWin ? jWin.width() : jWin.outerWidth()) / 2 - el.outerWidth() / 2;
-        var y = (isWin ? jWin.height() : jWin.outerHeight()) / heightFudge - el.outerHeight() / 2;
-
-        el.css("left", x + jWin.scrollLeft());
-        el.css("top", y + jWin.scrollTop());
-
-        // if specified make callback and pass element
-        if (opt.completeHandler)
-            opt.completeHandler(this);
-    });
-}
- */
 
 /*
 *  Ajax Autocomplete for jQuery, version 1.1
@@ -877,6 +830,7 @@ $.fn.centerInClient = function(options) {
  * Version 2.1.2
  */
 (function(a){a.fn.bgiframe=(a.browser.msie&&/msie 6\.0/i.test(navigator.userAgent)?function(d){d=a.extend({top:"auto",left:"auto",width:"auto",height:"auto",opacity:true,src:"javascript:false;"},d);var c='<iframe class="bgiframe"frameborder="0"tabindex="-1"src="'+d.src+'"style="display:block;position:absolute;z-index:-1;'+(d.opacity!==false?"filter:Alpha(Opacity='0');":"")+"top:"+(d.top=="auto"?"expression(((parseInt(this.parentNode.currentStyle.borderTopWidth)||0)*-1)+'px')":b(d.top))+";left:"+(d.left=="auto"?"expression(((parseInt(this.parentNode.currentStyle.borderLeftWidth)||0)*-1)+'px')":b(d.left))+";width:"+(d.width=="auto"?"expression(this.parentNode.offsetWidth+'px')":b(d.width))+";height:"+(d.height=="auto"?"expression(this.parentNode.offsetHeight+'px')":b(d.height))+';"/>';return this.each(function(){if(a(this).children("iframe.bgiframe").length===0){this.insertBefore(document.createElement(c),this.firstChild)}})}:function(){return this});a.fn.bgIframe=a.fn.bgiframe;function b(c){return c&&c.constructor===Number?c+"px":c}})(jQuery);
+
 /*
  * jQuery Tools 1.2.4 - The missing UI library for the Web
  * 
@@ -2604,10 +2558,21 @@ function warnEmpty (theField, s)
 
 function warnInvalid (theField, s)
 {
-    alert(s);	
 	theField.style.fontWeight = 'bold';
 	theField.style.backgroundColor='#FFB7BE';
-	setTimeout(function () { theField.focus() }, 50);
+	// Set id for regex validation dialog div
+	var valPopupId = 'redcapValidationErrorPopup';
+	// Get ID of field: If field does not have an id, then given it a random one so later we can reference it directly.
+	var obId = $(theField).attr('id');
+	if (obId == null) {
+		obId = "val-"+Math.floor(Math.random()*10000000000000000);
+		$(theField).attr('id', obId);
+	}
+	// Set the Javascript for returning focus back on element (if specified)
+	setTimeout(function(){
+		simpleDialog(s, null,valPopupId, null, "$('#"+obId+"').focus();");
+		$('#'+valPopupId).parent().find('button:first').focus();
+	},10);
     return false;
 }
 
@@ -3352,8 +3317,8 @@ function redcap_clean_date(this_date,texttype)
 }
 
 // REDCap form validation function
-function redcap_validate(ob, min, max, returntype, texttype, regexVal)
-{	
+function redcap_validate(ob, min, max, returntype, texttype, regexVal, returnFocus)
+{
 	var return_value;
 	var kickout_message;
 	var holder1;
@@ -3369,12 +3334,27 @@ function redcap_validate(ob, min, max, returntype, texttype, regexVal)
 		ob.style.backgroundColor='#FFFFFF';
 		return true;
 	}
+		
+	// Get ID of field: If field does not have an id, then given it a random one so later we can reference it directly.
+	var obId = $(ob).attr('id');
+	if (obId == null) {
+		obId = "val-"+Math.floor(Math.random()*10000000000000000);
+		$(ob).attr('id', obId);
+	}
 	
+	// Set the Javascript for returning focus back on element (if specified)
+	if (returnFocus == null) returnFocus = 1;
+	var returnFocusJS = (returnFocus == 1) ? "$('#"+obId+"').focus();" : "";
+		
 	//REGULAR EXPRESSION
 	if (regexVal != null)
 	{
 		// Before evaluating with regex, first do some cleaning
 		ob.value = trim(ob.value);
+	
+		// Set id for regex validation dialog div
+		var regexValPopupId = 'redcapValidationErrorPopup';
+		
 		// For date[time][_seconds] fields, replace any periods or slashes with a dash. Add any leading zeros.
 		if (texttype=="date_ymd" || texttype=="date_mdy" || texttype=="date_dmy") {
 			ob.value = redcap_clean_date(ob.value,texttype);
@@ -3388,6 +3368,12 @@ function redcap_validate(ob, min, max, returntype, texttype, regexVal)
 			var thistime = dt_array[1];
 			ob.value = trim(thisdate+' '+thistime);
 		}
+		
+		// Obtain regex from hidden divs on page (where they are stored)
+		if (regexVal === 1) {
+			regexVal = $('#valregex_divs #valregex-'+texttype).html();
+		}
+		
 		// Evaluate value with regex
 		eval('var regexVal2 = '+regexVal+';');
 		if (regexVal2.test(ob.value)) 
@@ -3454,9 +3440,9 @@ function redcap_validate(ob, min, max, returntype, texttype, regexVal)
 				}
 				// Check range
 				if ((holder2 !== '' && holder1 < holder2) || (holder3 !== '' && holder1 > holder3)) {	
-					var msg1 = ($('#valtext_rangesoft1').length) ? $('#valtext_rangesoft1').text() : 'The value you provided is outside the suggested range.';
-					var msg2 = ($('#valtext_rangesoft2').length) ? $('#valtext_rangesoft2').text() : 'This value is admissible, but you may wish to verify.';
-					alert(msg1 + ' (' + (min==''?'no limit':min) + ' - ' + (max==''?'no limit':max) +'). ' + msg2);
+					var msg1 = ($('#valtext_divs #valtext_rangesoft1').length) ? $('#valtext_divs #valtext_rangesoft1').text() : 'The value you provided is outside the suggested range.';
+					var msg2 = ($('#valtext_divs #valtext_rangesoft2').length) ? $('#valtext_divs #valtext_rangesoft2').text() : 'This value is admissible, but you may wish to verify.';
+					simpleDialog(msg1 + ' (' + (min==''?'no limit':min) + ' - ' + (max==''?'no limit':max) +'). ' + msg2);
 					ob.style.backgroundColor='#FFB7BE';
 					return true;
 				}
@@ -3467,28 +3453,30 @@ function redcap_validate(ob, min, max, returntype, texttype, regexVal)
 			return true;			
 		}
 		// Set default generic message for failure
-		var msg = ($('#valtext_regex').length) ? $('#valtext_regex').text() : 'The value you provided could not be validated because it does not follow the expected format. Please try again.';
+		var msg = ($('#valtext_divs #valtext_regex').length) ? $('#valtext_divs #valtext_regex').text() : 'The value you provided could not be validated because it does not follow the expected format. Please try again.';
 		// Custom messages for legacy validation types
 		if (texttype=="zipcode") {
-			msg = ($('#valtext_zipcode').length) ? $('#valtext_zipcode').text() : iZIPCode;
+			msg = ($('#valtext_divs #valtext_zipcode').length) ? $('#valtext_divs #valtext_zipcode').text() : iZIPCode;
 		} else if (texttype=="email") {
-			msg = ($('#valtext_email').length) ? $('#valtext_email').text() : iEmail;
+			msg = ($('#valtext_divs #valtext_email').length) ? $('#valtext_divs #valtext_email').text() : iEmail;
 		} else if (texttype=="phone") {
-			msg = ($('#valtext_phone').length) ? $('#valtext_phone').text() : iUSPhone;
+			msg = ($('#valtext_divs #valtext_phone').length) ? $('#valtext_divs #valtext_phone').text() : iUSPhone;
 		} else if (texttype=="integer") {
-			msg = ($('#valtext_integer').length) ? $('#valtext_integer').text() : 'This value you provided is not an integer. Please try again.';
+			msg = ($('#valtext_divs #valtext_integer').length) ? $('#valtext_divs #valtext_integer').text() : 'This value you provided is not an integer. Please try again.';
 		} else if (texttype=="number") {
-			msg = ($('#valtext_number').length) ? $('#valtext_number').text() : 'This value you provided is not a number. Please try again.';
+			msg = ($('#valtext_divs #valtext_number').length) ? $('#valtext_divs #valtext_number').text() : 'This value you provided is not a number. Please try again.';
 		} else if (texttype=="vmrn") {
-			msg = ($('#valtext_vmrn').length) ? $('#valtext_vmrn').text() : 'The value entered is not a valid Vanderbilt Medical Record Number (i.e. 4- to 9-digit number, excluding leading zeros). Please try again.';
+			msg = ($('#valtext_divs #valtext_vmrn').length) ? $('#valtext_divs #valtext_vmrn').text() : 'The value entered is not a valid Vanderbilt Medical Record Number (i.e. 4- to 9-digit number, excluding leading zeros). Please try again.';
 		} else if (texttype=="time") {
-			msg = ($('#valtext_time').length) ? $('#valtext_time').text() : 'The value entered must be a time value in the following format HH:MM within the range 00:00-23:59 (e.g. 04:32 or 23:19).';
+			msg = ($('#valtext_divs #valtext_time').length) ? $('#valtext_divs #valtext_time').text() : 'The value entered must be a time value in the following format HH:MM within the range 00:00-23:59 (e.g. 04:32 or 23:19).';
 		}
 		// Give alert message of failure
-		alert(msg);
+		setTimeout(function(){
+			simpleDialog(msg, null, regexValPopupId, null, returnFocusJS);
+			$('#'+regexValPopupId).parent().find('button:first').focus();
+		},10);
 		ob.style.fontWeight = 'bold';
 		ob.style.backgroundColor = '#FFB7BE';
-		setTimeout(function () { ob.focus() }, 1);
 		// Set flag on page
 		$('#field_validation_error_state').val('1');
 		return false;
@@ -3497,7 +3485,7 @@ function redcap_validate(ob, min, max, returntype, texttype, regexVal)
 	//ZIPCODE
 	if(texttype=="zipcode")
 	{
-		if ($('#valtext_zipcode').length) iZIPCode = $('#valtext_zipcode').text();
+		if ($('#valtext_divs #valtext_zipcode').length) iZIPCode = $('#valtext_divs #valtext_zipcode').text();
 	    if (checkZIPCode(ob,true)) {
 			ob.style.fontWeight = 'normal';
 			ob.style.backgroundColor='#FFFFFF';
@@ -3509,7 +3497,7 @@ function redcap_validate(ob, min, max, returntype, texttype, regexVal)
 	//EMAIL
 	if (texttype=="email")
     {
-		if ($('#valtext_email').length) iEmail = $('#valtext_email').text();
+		if ($('#valtext_divs #valtext_email').length) iEmail = $('#valtext_divs #valtext_email').text();
 		if (checkEmail(ob,true)) {
 			ob.style.fontWeight = 'normal';
 			ob.style.backgroundColor='#FFFFFF';
@@ -3521,7 +3509,7 @@ function redcap_validate(ob, min, max, returntype, texttype, regexVal)
 	//Phone
 	if (texttype=="phone")
     {
-		if ($('#valtext_phone').length) iUSPhone = $('#valtext_phone').text();
+		if ($('#valtext_divs #valtext_phone').length) iUSPhone = $('#valtext_divs #valtext_phone').text();
 		if (checkUSPhone(ob,true)) {
 			ob.style.fontWeight = 'normal';
 			ob.style.backgroundColor='#FFFFFF';
@@ -3535,11 +3523,10 @@ function redcap_validate(ob, min, max, returntype, texttype, regexVal)
     {
 		if (ob.value != "") {
 			if (!isTime(ob.value,0)) {
-				var msg = ($('#valtext_time').length) ? $('#valtext_time').text() : 'The value entered must be a time value in the following format HH:MM within the range 00:00-23:59 (e.g. 04:32 or 23:19).';
-				alert(msg);
+				var msg = ($('#valtext_divs #valtext_time').length) ? $('#valtext_divs #valtext_time').text() : 'The value entered must be a time value in the following format HH:MM within the range 00:00-23:59 (e.g. 04:32 or 23:19).';
+				simpleDialog(msg, null, null, null, returnFocusJS);
 				ob.style.fontWeight = 'bold';
 				ob.style.backgroundColor = '#FFB7BE';
-				setTimeout(function () { ob.focus() }, 1);
 				return false;
 			}				
 			//Now handle limits
@@ -3548,16 +3535,15 @@ function redcap_validate(ob, min, max, returntype, texttype, regexVal)
 			holder3 = (max=='') ? '' : (max.replace(/:/g,"").replace(/ /g,"").replace(/-/g,""))*1;
 			if ((holder2 != '' && holder1 < holder2) || (holder3 != '' && holder1 > holder3)) {	
 				if(returntype=="hard") {
-					var msg = ($('#valtext_rangehard').length) ? $('#valtext_rangehard').text() : 'The value you provided must be within the suggested range';
-					alert(msg + ' (' + min + ' - ' + max +').');
+					var msg = ($('#valtext_divs #valtext_rangehard').length) ? $('#valtext_divs #valtext_rangehard').text() : 'The value you provided must be within the suggested range';
+					simpleDialog(msg + ' (' + min + ' - ' + max +').', null, null, null, returnFocusJS);
 					ob.style.backgroundColor='#FFB7BE';
-					setTimeout(function () { ob.focus() }, 1);
 				}
 				else
 				{
-					var msg1 = ($('#valtext_rangesoft1').length) ? $('#valtext_rangesoft1').text() : 'The value you provided is outside the suggested range.';
-					var msg2 = ($('#valtext_rangesoft2').length) ? $('#valtext_rangesoft2').text() : 'This value is admissible, but you may wish to verify.';
-					alert(msg1 + ' (' + min + ' - ' + max +'). ' + msg2);
+					var msg1 = ($('#valtext_divs #valtext_rangesoft1').length) ? $('#valtext_divs #valtext_rangesoft1').text() : 'The value you provided is outside the suggested range.';
+					var msg2 = ($('#valtext_divs #valtext_rangesoft2').length) ? $('#valtext_divs #valtext_rangesoft2').text() : 'This value is admissible, but you may wish to verify.';
+					simpleDialog(msg1 + ' (' + min + ' - ' + max +'). ' + msg2, null, null, null, returnFocusJS);
 					ob.style.backgroundColor='#FFB7BE';
 				}
 			}
@@ -3579,14 +3565,13 @@ function redcap_validate(ob, min, max, returntype, texttype, regexVal)
 			var hasSeconds = (texttype=="datetime_seconds");
 			if (!isTime(dt_time,hasSeconds) || holder1==null) {
 				if (!hasSeconds) {
-					var msg = ($('#valtext_datetime').length) ? $('#valtext_datetime').text() : 'The value entered must be a datetime value in the following format YYYY-MM-DD HH:MM with the time in the range 00:00-23:59.';
+					var msg = ($('#valtext_divs #valtext_datetime').length) ? $('#valtext_divs #valtext_datetime').text() : 'The value entered must be a datetime value in the following format YYYY-MM-DD HH:MM with the time in the range 00:00-23:59.';
 				} else {
-					var msg = ($('#valtext_datetime_seconds').length) ? $('#valtext_datetime_seconds').text() : 'The value entered must be a datetime value in the following format YYYY-MM-DD HH:MM:SS with the time in the range 00:00:00-23:59:59.';
+					var msg = ($('#valtext_divs #valtext_datetime_seconds').length) ? $('#valtext_divs #valtext_datetime_seconds').text() : 'The value entered must be a datetime value in the following format YYYY-MM-DD HH:MM:SS with the time in the range 00:00:00-23:59:59.';
 				}
-				alert(msg);
+				simpleDialog(msg, null, null, null, returnFocusJS);
 				ob.style.fontWeight = 'bold';
 				ob.style.backgroundColor = '#FFB7BE';
-				setTimeout(function () { ob.focus() }, 1);
 				return false;
 			}
 			ob.value=formatDate(holder1,'y-MM-dd')+' '+dt_time;				
@@ -3596,16 +3581,15 @@ function redcap_validate(ob, min, max, returntype, texttype, regexVal)
 			holder3 = (max=='') ? '' : (max.replace(/:/g,"").replace(/ /g,"").replace(/-/g,""))*1;
 			if ((holder2 != '' && holder1 < holder2) || (holder3 != '' && holder1 > holder3)) {	
 				if(returntype=="hard") {
-					var msg = ($('#valtext_rangehard').length) ? $('#valtext_rangehard').text() : 'The value you provided must be within the suggested range';
-					alert(msg + ' (' + min + ' - ' + max +').');
+					var msg = ($('#valtext_divs #valtext_rangehard').length) ? $('#valtext_divs #valtext_rangehard').text() : 'The value you provided must be within the suggested range';
+					simpleDialog(msg + ' (' + min + ' - ' + max +').', null, null, null, returnFocusJS);
 					ob.style.backgroundColor='#FFB7BE';
-					setTimeout(function () { ob.focus() }, 1);
 				}
 				else
 				{
-					var msg1 = ($('#valtext_rangesoft1').length) ? $('#valtext_rangesoft1').text() : 'The value you provided is outside the suggested range.';
-					var msg2 = ($('#valtext_rangesoft2').length) ? $('#valtext_rangesoft2').text() : 'This value is admissible, but you may wish to verify.';
-					alert(msg1 + ' (' + min + ' - ' + max +'). ' + msg2);
+					var msg1 = ($('#valtext_divs #valtext_rangesoft1').length) ? $('#valtext_divs #valtext_rangesoft1').text() : 'The value you provided is outside the suggested range.';
+					var msg2 = ($('#valtext_divs #valtext_rangesoft2').length) ? $('#valtext_divs #valtext_rangesoft2').text() : 'This value is admissible, but you may wish to verify.';
+					simpleDialog(msg1 + ' (' + min + ' - ' + max +'). ' + msg2, null, null, null, returnFocusJS);
 					ob.style.backgroundColor='#FFB7BE';
 				}
 			}
@@ -3624,11 +3608,10 @@ function redcap_validate(ob, min, max, returntype, texttype, regexVal)
 	    var result;
 	    var holder1 = parseDate(ob.value);
 		if(holder1==null){
-			var msg = ($('#valtext_date').length) ? $('#valtext_date').text() : 'The value entered in this field must be a date. You may use one of several formats (ex. YYYY-MM-DD or MM/DD/YYYY), but the final result must constitute a real date. Please try again.';
-			alert(msg);
+			var msg = ($('#valtext_divs #valtext_date').length) ? $('#valtext_divs #valtext_date').text() : 'The value entered in this field must be a date. You may use one of several formats (ex. YYYY-MM-DD or MM/DD/YYYY), but the final result must constitute a real date. Please try again.';
+			simpleDialog(msg, null, null, null, returnFocusJS);
 		    ob.style.fontWeight = 'bold';
 			ob.style.backgroundColor='#FFB7BE';
-			setTimeout(function () { ob.focus() }, 1);
 	        return false;
 		}
 		holder1=formatDate(holder1,'y-MM-dd');
@@ -3641,16 +3624,15 @@ function redcap_validate(ob, min, max, returntype, texttype, regexVal)
 		holder3 = (!max=='') ? formatDate(parseDate(max),'y-MM-dd') : formatDate(parseDate(ob.value),'y-MM-dd');
 		if(compareDates(holder2,'y-MM-dd',holder1,'y-MM-dd')==1 || compareDates(holder1,'y-MM-dd',holder3,'y-MM-dd')==1){
 			if(returntype=="hard") {
-				var msg = ($('#valtext_rangehard').length) ? $('#valtext_rangehard').text() : 'The value you provided must be within the suggested range';
-				alert(msg + ' (' + holder2 + ' - ' + holder3 +').');
+				var msg = ($('#valtext_divs #valtext_rangehard').length) ? $('#valtext_divs #valtext_rangehard').text() : 'The value you provided must be within the suggested range';
+				simpleDialog(msg + ' (' + holder2 + ' - ' + holder3 +').', null, null, null, returnFocusJS);
 				ob.style.backgroundColor='#FFB7BE';
-				setTimeout(function () { ob.focus() }, 1);
 			}
 			else
 			{
-				var msg1 = ($('#valtext_rangesoft1').length) ? $('#valtext_rangesoft1').text() : 'The value you provided is outside the suggested range.';
-				var msg2 = ($('#valtext_rangesoft2').length) ? $('#valtext_rangesoft2').text() : 'This value is admissible, but you may wish to verify.';
-				alert(msg1 + ' (' + holder2 + ' - ' + holder3 +'). ' + msg2);
+				var msg1 = ($('#valtext_divs #valtext_rangesoft1').length) ? $('#valtext_divs #valtext_rangesoft1').text() : 'The value you provided is outside the suggested range.';
+				var msg2 = ($('#valtext_divs #valtext_rangesoft2').length) ? $('#valtext_divs #valtext_rangesoft2').text() : 'This value is admissible, but you may wish to verify.';
+				simpleDialog(msg1 + ' (' + holder2 + ' - ' + holder3 +'). ' + msg2, null, null, null, returnFocusJS);
 				ob.style.backgroundColor='#FFB7BE';
 			}
 			return true;
@@ -3665,11 +3647,10 @@ function redcap_validate(ob, min, max, returntype, texttype, regexVal)
 	{
 		reformat_vanderbilt_mrn(ob); // Remove all non-numerals
 		if (!is_vanderbilt_mrn(ob.value)) {
-			var msg = ($('#valtext_vmrn').length) ? $('#valtext_vmrn').text() : 'The value entered is not a valid Vanderbilt Medical Record Number (i.e. 4- to 9-digit number, excluding leading zeros). Please try again.';
-			alert(msg);
+			var msg = ($('#valtext_divs #valtext_vmrn').length) ? $('#valtext_divs #valtext_vmrn').text() : 'The value entered is not a valid Vanderbilt Medical Record Number (i.e. 4- to 9-digit number, excluding leading zeros). Please try again.';
+			simpleDialog(msg, null, null, null, returnFocusJS);
 			ob.style.fontWeight = 'bold';
 			ob.style.backgroundColor = '#FFB7BE';
-			setTimeout(function () { ob.focus() }, 1);
 			return false;
 		} else {
 			ob.style.fontWeight = 'normal';
@@ -3701,22 +3682,20 @@ function redcap_validate(ob, min, max, returntype, texttype, regexVal)
 			return_value=isSignedInteger(ob.value,true);
 			if(!return_value)
 			{
-				var msg = ($('#valtext_integer').length) ? $('#valtext_integer').text() : 'This value you provided is not an integer. Please try again.';
-		    	alert(msg);
+				var msg = ($('#valtext_divs #valtext_integer').length) ? $('#valtext_divs #valtext_integer').text() : 'This value you provided is not an integer. Please try again.';
+		    	simpleDialog(msg, null, null, null, returnFocusJS);
 				ob.style.fontWeight = 'bold';
 				ob.style.backgroundColor='#FFB7BE';
-				setTimeout(function () { ob.focus() }, 1);
 		        return false;
 			}
 		} else if(texttype=="float") {
 			return_value=isSignedFloat(ob.value,true);
 			if(!return_value)
 			{
-				var msg = ($('#valtext_number').length) ? $('#valtext_number').text() : 'This value you provided is not a number. Please try again.';
-		    	alert(msg);	
+				var msg = ($('#valtext_divs #valtext_number').length) ? $('#valtext_divs #valtext_number').text() : 'This value you provided is not a number. Please try again.';
+		    	simpleDialog(msg, null, null, null, returnFocusJS);
 				ob.style.fontWeight = 'bold';
 				ob.style.backgroundColor='#FFB7BE';
-				setTimeout(function () { ob.focus() }, 1);
 		        return false;
 			}
 		}
@@ -3733,13 +3712,12 @@ function redcap_validate(ob, min, max, returntype, texttype, regexVal)
 			ob.style.fontWeight = 'bold';
 			ob.style.backgroundColor='#FFB7BE';
 			if(returntype=="hard") {
-				var msg = ($('#valtext_rangehard').length) ? $('#valtext_rangehard').text() : 'The value you provided must be within the suggested range.';
-				alert(msg + ' (' + range_text + ')');
-				setTimeout(function () { ob.focus() }, 1);
+				var msg = ($('#valtext_divs #valtext_rangehard').length) ? $('#valtext_divs #valtext_rangehard').text() : 'The value you provided must be within the suggested range.';
+				simpleDialog(msg + ' (' + range_text + ')', null, null, null, returnFocusJS);
 			} else {
-				var msg1 = ($('#valtext_rangesoft1').length) ? $('#valtext_rangesoft1').text() : 'The value you provided is outside the suggested range.';
-				var msg2 = ($('#valtext_rangesoft2').length) ? $('#valtext_rangesoft2').text() : 'This value is admissible, but you may wish to verify.';
-				alert(msg1 + ' (' + range_text +') ' + msg2);
+				var msg1 = ($('#valtext_divs #valtext_rangesoft1').length) ? $('#valtext_divs #valtext_rangesoft1').text() : 'The value you provided is outside the suggested range.';
+				var msg2 = ($('#valtext_divs #valtext_rangesoft2').length) ? $('#valtext_divs #valtext_rangesoft2').text() : 'This value is admissible, but you may wish to verify.';
+				simpleDialog(msg1 + ' (' + range_text +') ' + msg2, null, null, null, returnFocusJS);
 			}
 			return false;
 		}		
@@ -4235,11 +4213,11 @@ function chk_len(pass,mn,mx) {
    var str = trim(pass.value);
 return str.length >= mn && str.length <= mx }
 
-function trim(str) {
+function trim(s) {
    // str - any string
    // returns the same string with stripped leading and trailing blanks
-   //var str = new String(s);
-   return str.replace(/^\s*|\s*$/g,"");
+   var str = new String(s);
+   return (str == '') ? '' : str.replace(/^\s*|\s*$/g,"");
 }
 
 function alertbad(fld,mess) {
@@ -4266,13 +4244,15 @@ function filePopUp(field_name,label_page) {
 			$("#field_name_popup").html(data);
 			$('#file_upload').dialog('destroy');
 			$('#file_upload').dialog({ bgiframe: true, modal: true, width: (isMobileDevice ? $('body').width() : 500) });
-			// Since iOS devices do not support file uploading on webpages in Mobile Safari, give note to user about this.
-			if (isIOS) {
+			// Since iOS (v5.1 and below) devices do not support file uploading on webpages in Mobile Safari, give note to user about this.
+			if (isIOS && isIOS5andBelow) {
 				$('#this_upload_field').hide();
-				$('#f1_upload_form').html("<p style='color:red;'><b>CANNOT UPLOAD FILE!</b><br>We're sorry, but Apple does not support uploading files onto webpages "
-					+ "in their Mobile Safari browser for iOS devices, such as iPhones, iPads, iPod Touches. "
+				$('#f1_upload_form').html("<p style='color:red;'><b>CANNOT UPLOAD FILE!</b><br>"
+					+ "We're sorry, but Apple does not support uploading files onto webpages "
+					+ "in their Mobile Safari browser for iOS devices, such as iPhones, iPads, and iPod Touches (specifically those on iOS version 5.1 and below). "
 					+ "Because it appears that you are using one of these devices, you will not be able to upload a file here."
-					+ "This is not an issue in REDCap but is merely a limitation imposed by Apple.</p>");
+					+ "This is not an issue in REDCap but is merely a limitation imposed by Apple. NOTE: iOS version 6 and above *does* support uploading "
+					+ "of pictures and videos (but not other file types), so you may consider upgrading your Apple device to the latest version of iOS.</p>");
 			}
 		}
 	);
@@ -4291,7 +4271,7 @@ function stopUpload(success,this_field,doc_id,doc_name,study_id,doc_size,event_i
 		document.getElementById(this_field+"-link").innerHTML = doc_name+doc_size;
 		document.getElementById(this_field+"-link").href = download_page+"&id="+doc_id+"&s="+getParameterByName('s')+"&record="+getParameterByName('id')+"&page="+getParameterByName('page')+"&event_id="+event_id+"&field_name="+this_field;
 		$('#'+this_field+"-link").attr('onclick', "return appendRespHash('"+this_field+"');");
-		var newlinktext = '<img src="'+app_path_images+'bullet_delete.png">'
+		var newlinktext = '<img src="'+app_path_images+'bullet_delete.png"> '
 			+ '<a href="javascript:;" style="font-size:10px;color:red;" onclick=\'if(confirm(delDocText)) { deleteDocument('+doc_id+',"'+this_field+'","'+study_id+'",'+event_id+',"'+delete_page+'&__response_hash__="+$("#form input[name=__response_hash__]").val()); }\'>Remove file</a>';
 		if (sendit_enabled) {
 			newlinktext += "<span class=\"sendit-lnk\"><span style=\"font-size:10px;padding:0 10px;\">or</span><img src=\""+app_path_images+"mail_small.png\" style=\"position:relative;top:5px;\" /><a onclick=\"popupSendIt("+doc_id+",3)\" href=\"javascript:;\" style=\"font-size:10px;\">Send-It</a>&nbsp;</span>";
@@ -5302,7 +5282,7 @@ function setFieldsCreateForm(slide_effect) {
 // Check values before submission on Create/Edit Project form
 function setFieldsCreateFormChk() {
 	if ($('#app_title').val().length < 1) {
-		alert('Please provide a project title');
+		simpleDialog('Please provide a project title.','Missing title');
 		return false;
 	}
 	if (page != "ProjectGeneral/copy_project_form.php") {
@@ -5310,16 +5290,12 @@ function setFieldsCreateFormChk() {
 			(!$('#projecttype0').prop('checked') && !$('#projecttype1').prop('checked') && !$('#projecttype2').prop('checked'))
 			|| ( ( $('#projecttype1').prop('checked') || $('#projecttype2').prop('checked') ) && ( !$('#repeatforms_chk1').prop('checked') && !$('#repeatforms_chk2').prop('checked') ) ) 
 		   ) {
-			alert('Please fill out all the fields and steps.');
+			simpleDialog('Please fill out all the fields and steps.','Some steps not completed');
 			return false;
 		}
 	}
-	if ($('#purpose').val() == ''){
-		alert('Please select the purpose for creating this project');
-		return false;
-	} 
-	if ($('#purpose').val() == '1' && $('#purpose_other_text').val() == ''){
-		alert('Please specify the purpose for creating this project');
+	if ($('#purpose').val() == '' || ($('#purpose').val() == '1' && $('#purpose_other_text').val() == '')) {
+		simpleDialog('Please specify the purpose for creating this project','Specify purpose');
 		return false;
 	}
 	var numChkBoxes = $('#purpose_other_research input[type=checkbox]').length - 1; // Number of Research checkboxes
@@ -5331,13 +5307,19 @@ function setFieldsCreateFormChk() {
 			}
 		}
 		if (numChecked < 1)	{
-			alert('Please specify one or more purposes for creating this project');
+			simpleDialog('Please specify one or more areas of research for this project.','Specify research area');
 			return false;
 		}
 	} else {
 		for (i = 0; i <= numChkBoxes; i++) {
 			document.getElementById('purpose_other['+i+']').checked = false;
 		}	
+	}
+	// If "template" option is selected, make sure the user has chosen a template from the table
+	if ($('input[name="project_template_radio"]').length && $('input[name="project_template_radio"]:checked').val() == '1'
+		&& !isNumeric($('input[name="copyof"]:checked').val())) {
+		simpleDialog('You have not selected a project template from the list. Please select a template.','Select a template');
+		return false;
 	}
 	return true;
 }
@@ -5856,7 +5838,7 @@ function dataEntrySubmit(ob)
 			esign_action = "save";
 			// If form is not locked already or checked to be locked, then stop (because is necessary)
 			if ($('#__LOCKRECORD__').prop('checked') == false) {
-				alert('WARNING:\n\nThe "Lock Record" option must be checked before the e-signature can be saved. Please check the "Lock Record" check box and try again.');
+				simpleDialog('WARNING:\n\nThe "Lock Record" option must be checked before the e-signature can be saved. Please check the "Lock Record" check box and try again.');
 				return false;
 			}
 		}
@@ -5957,7 +5939,7 @@ function setUnlocked(esign_action) {
 		esign_msg = ", and the existing e-signature has been negated";	
 	}
 	// Give confirmation
-	alert("UNLOCK SUCCESSFUL!\n\nThis form has now been unlocked"+esign_msg+". Users can now modify the data again on this form.");
+	simpleDialog("This form has now been unlocked"+esign_msg+". Users can now modify the data again on this form.","UNLOCK SUCCESSFUL!");
 }
 
 // Lock/Unlock records for multiple forms
@@ -6070,8 +6052,7 @@ function lockDisabledForm(ob) {
 		$.post(app_path_webroot+"Locking/single_form_action.php?pid="+pid, {esign_action: '', no_auth_key: 'q4deAr8s', event_id: event_id, action: "lock", record: getParameterByName('id'), form_name: getParameterByName('page')}, function(data){
 			if (data == "1") {
 				$(ob).prop('disabled',true);
-				alert("LOCK SUCCESSFUL!\n\nThe form has now been locked. The page will now reload to reflect this change.");
-				window.location.reload();
+				simpleDialog("The form has now been locked. The page will now reload to reflect this change.","LOCK SUCCESSFUL!",null,null,"window.location.reload();");
 			} else {
 				alert(woops);
 			}
@@ -6091,9 +6072,8 @@ function unlockForm() {
 		esign_notice = " NOTICE: Unlocking this form will also negate the current e-signature.";
 		esign_action = "negate";
 	}
-	if (confirm("UNLOCK FORM?\n\nAre you sure you wish to unlock this form for record \""+getParameterByName('id')+"\"?"+esign_notice)) {
-		saveLocking(0,esign_action);
-	}
+	simpleDialog("Are you sure you wish to unlock this form for record \"<b>"+getParameterByName('id')+"</b>\"?"+esign_notice,"UNLOCK FORM?",null,null,
+		null,"Cancel","saveLocking(0,'"+esign_action+"');","Okay");
 }
 
 // Get file extension from filename string
@@ -6584,7 +6564,7 @@ function checkLogo(file) {
 function sendSelfEmail(survey_id,url) {
 	$.get(app_path_webroot+'Surveys/email_self.php', { pid: pid, survey_id: survey_id, url: url }, function(data) {
 		if (data != '0') {
-			alert('The survey link was successfully emailed to '+data);
+			simpleDialog('The survey link was successfully emailed to '+data,'Email sent!');
 		} else {
 			alert(woops);
 		}
@@ -6668,7 +6648,7 @@ function delete_project(this_pid,ob) {
 			Cancel: function() { $(this).dialog('close'); } , 
 			'Delete the project': function() {
 				if (trim($('#delete_project_confirm').val().toLowerCase()) != "delete") {
-					alert('You must type "DELETE" first.');
+					simpleDialog('You must type "DELETE" first.');
 					return;
 				}
 				if (!confirm("Are you really sure you wish to delete this project and all its data? (There is no going back after this step.)")){
@@ -6707,8 +6687,14 @@ function initDialog(div_id,inner_html) {
 // For emailing survey link for participants that wish to return later
 function emailReturning(survey_id,event_id,participant_id,hash,email,page) {
 	$.get(page, { s: hash, survey_id: survey_id, event_id: event_id, participant_id: participant_id, email: email }, function(data) {
-		if (data == '0') alert(woops);
-		else if (email != '') alert('The email was successfully sent to '+data);
+		if (data == '0') {
+			alert(woops);
+		} else if (data == '2') {
+			$('#autoEmail').hide();
+			$('#provideEmail').show();
+		} else if (email != '') {
+			simpleDialog('The email was successfully sent to '+data,'Email sent!');
+		}
 	});
 }
 
@@ -6941,13 +6927,6 @@ function resetSlider(fld) {
 	document.forms['form'].elements[fld].value = '';
 	doBranching();
 	calculate();
-}
-
-// Rename selected data entry form on Design page
-function setupRenameForm(form) {
-	document.getElementById('formlabel-'+form).style.display = 'none';
-	document.getElementById('form_menu_description_input_span-'+form).style.display = '';
-	setCaretToEnd(document.getElementById('form_menu_description_input-'+form));
 }
 
 // Delete selected data entry form on Design page
@@ -7437,29 +7416,55 @@ function inviteFollowupSurveyPopupSelectEmail(ob) {
 function inviteFollowupSurveyPopup(survey_id,form,record,event_id) {
 	if (!$('#inviteFollowupSurvey').length) $('body').append('<div id="inviteFollowupSurvey" style="display:none;"></div>');
 	// Get the dialog content via ajax first
-	$.post(app_path_webroot+'Surveys/invite_followup_survey.php?pid='+pid+'&survey_id='+survey_id, { action: 'popup', form: form, record: record, event_id: event_id }, function(data){
+	$.post(app_path_webroot+'Surveys/invite_participant_popup.php?pid='+pid+'&survey_id='+survey_id+'&event_id='+event_id, { action: 'popup', form: form, record: record }, function(data){
 		if (data == '0') {
 			alert(woops);
 			return;
 		}
-		$('#inviteFollowupSurvey').html(data).dialog({ bgiframe: true, modal: true, width: 600, open: function(){fitDialog(this)}, 
+		$('#inviteFollowupSurvey').html(data);
+		initWidgets();
+		$('#inviteFollowupSurvey').dialog({ bgiframe: true, modal: true, width: 550, open: function(){fitDialog(this)}, 
 			title: 'Email Survey Invitation to Participant "'+record+'"',
-			buttons: { 'Send Email': function() {
+			buttons: {
+			'Cancel': function() {
+				$(this).dialog('close');
+			},
+			'Send Email': function() {
+				// Trim email subject/message
+				$('#followupSurvEmailSubject').val( trim($('#followupSurvEmailSubject').val()) );
+				$('#followupSurvEmailMsg').val( trim($('#followupSurvEmailMsg').val()) );
+				// If set exact time in future to send surveys, make sure time doesn't exist in the past
+				var now_mdyhm = $('#now_mdyhm').val();
+				if ($('#inviteFollowupSurvey input[name="emailSendTime"]:checked').val() == 'EXACT_TIME') {
+					if ($('#inviteFollowupSurvey #emailSendTimeTS').val().length < 1) {
+						simpleDialog($('#langFollowupProvideTime').html(),null,null,null,"$('#inviteFollowupSurvey #emailSendTimeTS').focus();");
+						return;
+					} else if (!redcap_validate(document.getElementById('emailSendTimeTS'),'','','hard','datetime_mdy',1)) {
+						return;
+					} else if ($('#inviteFollowupSurvey #emailSendTimeTS').val() < now_mdyhm) {
+						simpleDialog($('#langFollowupTimeInvalid').html(),$('#langFollowupTimeExistsInPast').html());
+						return;
+					}
+				}
 				// Make sure we have email address, subject, and message
 				// Typed email overrides the drop-down selection email
 				var email = trim($('#followupSurvEmailTo').val());
+				var static_email = 1;
 				if (email == '' && $('#followupSurvEmailToDD').length) {
 					email = trim($('#followupSurvEmailToDD').val());
+					static_email = 0;
 				}
 				if (!isEmail(email)) {
-					alert('Please provide a valid email address');
+					simpleDialog('Please provide a valid email address');
 					return;
 				}				
 				// Set status message
+				$(':button:contains("Cancel") span').html('Close');
 				$(':button:contains("Send Email")').unbind().html('<span class="ui-button-text"><img src="'+app_path_images+'progress_circle.gif" style="vertical-align:middle;"> <span style="vertical-align:middle;">Sending...</span></span>'); 
 				// Send email via ajax
-				$.post(app_path_webroot+'Surveys/invite_followup_survey.php?pid='+pid+'&survey_id='+survey_id, { email: email, 
-					action: 'email', form: form, record: record, event_id: event_id, subject: trim($('#followupSurvEmailSubject').val()), msg: trim($('#followupSurvEmailMsg').val()) }, function(data){
+				$.post(app_path_webroot+'Surveys/invite_participant_popup.php?pid='+pid+'&survey_id='+survey_id+'&event_id='+event_id, { email: email, 
+					action: 'email', static_email: static_email, form: form, record: record, email_account: $('#followupSurvEmailFrom').val(), subject: $('#followupSurvEmailSubject').val(), msg: $('#followupSurvEmailMsg').val(),
+					sendTime: $('#inviteFollowupSurvey input[name="emailSendTime"]:checked').val(), sendTimeTS: $('#inviteFollowupSurvey #emailSendTimeTS').val()}, function(data){
 					if (data == '0') {
 						alert(woops);
 						return;
@@ -7468,7 +7473,7 @@ function inviteFollowupSurveyPopup(survey_id,form,record,event_id) {
 					$('#inviteFollowupSurvey').html(data);
 					$('#inviteFollowupSurveyBtn').hide();
 					$(':button:contains("Sending...")').remove(); //.html('<button id="closeInviteFollowupSurvey" onclick="alert(222);$(\'#inviteFollowupSurvey\').dialog(\'close\');" class="ui-button-text">Close</button>');
-					setTimeout(function(){ $('#inviteFollowupSurvey').dialog('close'); }, 4000);
+					//setTimeout(function(){ $('#inviteFollowupSurvey').dialog('close'); }, 6000);
 				});
 			} }
 		});
@@ -7579,8 +7584,8 @@ function randomizeDialog(record) {
 						}
 						// If any missing fields are missing a value, stop here and prompt user
 						if (fldsNoValCnt > 0) {
-							alert("VALUES MISSING FOR STRATA/CRITERIA FIELDS!\n\n"+fldsNoValCnt+" strata/criteria field(s) do not yet have a value. "
-								+ "You must first provide them with a value before randomization can be performed.");
+							simpleDialog(fldsNoValCnt+" strata/criteria field(s) do not yet have a value. "
+								+ "You must first provide them with a value before randomization can be performed.","VALUES MISSING FOR STRATA/CRITERIA FIELDS!");
 							return;
 						}
 					}
@@ -7686,76 +7691,73 @@ function randomizeDialog(record) {
 }
 
 // Display jQuery UI dialog with Close button (provide id, title, content, width, onClose JavaScript event as string)
-function simpleDialog(content,title,id,width,onCloseJs) {
+function simpleDialog(content,title,id,width,onCloseJs,closeBtnTxt,okBtnJs,okBtnTxt) {
 	// If no id is provided, create invisible div on the fly to use as dialog container
 	var idDefined = true;
 	if (id == null || trim(id) == '') {
 		id = "popup"+Math.floor(Math.random()*10000000000000000);
-		$('body').append('<div style="display:none;padding:15px 15px 10px;line-height:1.4em;" id="'+id+'"></div>');
 		idDefined = false;
 	}
+	// If this DOM element doesn't exist yet, then add it and set title/content
+	if ($('#'+id).length < 1) {
+		$('body').append('<div class="simpleDialog" id="'+id+'"></div>');
+		// Set content/title, if not provided
+		if (content == null) content = '';
+		// Set content
+		$('#'+id).html(content);
+		var existInDom = false;
+	} else {
+		if (title == null || title == '') title = $('#'+id).attr('title');
+		var existInDom = true;
+	}
+	// default title
+	if (title == null) title = '<span style="color:#555;font-weight:normal;">Alert</span>'; 
 	// Set parameters
-	if (content == null) content = '';
-	if (title == null) title = '<span style="color:#555;font-weight:normal;">Alert</span>'; // default title
 	if (!isNumeric(width)) width = 500; // default width
-	// Set content
-	$('#'+id).html(content);
+	// Set default button text
+	if (okBtnTxt == null) {
+		// Default "okay" text for secondary button
+		okBtnTxt = 'Okay';
+		// Default "cancel" text for first button when have 2 buttons
+		if (okBtnJs != null && closeBtnTxt == null) closeBtnTxt = 'Cancel';
+	}
+	if (closeBtnTxt == null) {
+		// Default "close" text for single button
+		closeBtnTxt = 'Close';
+	}
+	// Set up button(s)
+	if (okBtnJs == null) {
+		// Only show a Close button
+		var btns =	[{ text: closeBtnTxt, click: function() { 
+						// Destroy dialog and remove div from DOM if was created on the fly
+						$(this).dialog('close').dialog('destroy');
+						if (!idDefined) $('#'+id).remove(); 
+					} }];
+	} else {
+		// Show two buttons
+		var btns =	[{ text: closeBtnTxt, click: function() { 
+						// Destroy dialog and remove div from DOM if was created on the fly
+						$(this).dialog('close').dialog('destroy');
+						if (!idDefined) $('#'+id).remove(); 
+						eval(onCloseJs);
+					}},
+					{text: okBtnTxt, click: function() {
+						// Destroy dialog and remove div from DOM if was created on the fly
+						$(this).dialog('destroy');
+						if (!idDefined) $('#'+id).remove();
+						// If okBtnJs was provided, then eval it to execute
+						if (okBtnJs != null) eval(okBtnJs);
+					}}];
+	}
 	// Show dialog
-	$('#'+id).dialog({ bgiframe: true, modal: true, width: width, title: title,
-		buttons: { Close: function() { 
-			$(this).dialog('close'); 
-			$(this).dialog('destroy');
-			// Remove div from DOM if was created on the fly
-			if (!idDefined) $('#'+id).remove(); 
-		} }
-	});
+	$('#'+id).dialog({ bgiframe: true, modal: true, width: width, title: title, buttons: btns });
 	// If Javascript is provided for onClose event, then set it here
 	if (onCloseJs != null) {
 		eval("$('#"+id+"').bind('dialogclose',function(){ "+onCloseJs+" });");
 	}
+	// If div already existed in DOM beforehand (i.e. wasn't created here on the fly), then re-add title to div because it gets lost when converted to dialog
+	if (existInDom)	$('#'+id).attr('title', title);
 }
-
-/* 
-// Rewrite Javascript alert(), confirm(), and prompt()
-var alerts = {
-	// "Alert" dialog
-	alert: function(message, title, callback) {
-		if( title == null ) title = 'Alert';
-		alerts._show(title, message, null, 'alert', function(result) {
-			if( callback ) callback(result);
-		});
-	},
-	// Display dialog
-	_show: function(title, msg, value, type, callback) {
-		// Random id
-		var randId = "popup"+Math.floor(Math.random()*10000000000000000);
-		// Create element on page
-		$('body').append('<div id="'+randId+'" style="display:none;margin:10px;">'+msg.replace(/\n/g, '<br />')+'</div>');
-		switch( type ) {
-			case 'alert':
-				// Open dialog
-				$('#'+randId).dialog({ bgiframe: true, modal: true, width: 500, title: title,
-					buttons: { 
-						'Close': function() { 
-							$('#'+randId).dialog('destroy'); 
-						} 
-					}
-				});
-				// Create onclick for button with callback
-				// $('#'+randId+' button').click( function() {
-					// $('#'+randId).dialog('close');
-					// callback(true);
-				// });
-				// $('#'+randId+' button').focus().keypress( function(e) {
-					// if( e.keyCode == 13 || e.keyCode == 27 ) $('#'+randId+' button').trigger('click');
-				// });
-			break;
-		}
-	}
-}
-// Overwrite the JavaScript alert function
-var alert = function(text) { alerts.alert(text) }
- */
 
 // Convert HTML <br /> tags to new lines \n
 function br2nl(val) {
@@ -7789,6 +7791,187 @@ function isUrlError(ob) {
 	}
 	return true;
 }
+
+// Open dialog to allow user to set up secondary/tertiary email for their REDCap account
+function setUpAdditionalEmails() {
+	// First, load a dialog via ajax
+	$.post(app_path_webroot+'Profile/set_up_emails.php',{ action: 'view' },function(data){
+		var json_data = jQuery.parseJSON(data);
+		initDialog('setUpAdditionalEmails');
+		$('#setUpAdditionalEmails').addClass('simpleDialog').html(json_data.popupContent);
+		$('#setUpAdditionalEmails').dialog({ bgiframe: true, modal: true, width: 600, title: json_data.popupTitle, buttons: [
+			{ text: 'Cancel',click: function(){
+				$(this).dialog('destroy');
+			}},
+			{ text: json_data.saveBtnTxt, click: function(){
+				saveAdditionalEmails();
+			}}
+		] });
+	});
+}
+
+// Save secondary/tertiary email for their REDCap account
+function saveAdditionalEmails() {
+	// Get new email value
+	var new_email = $('#add_new_email').val();
+	// Make sure it has a value
+	if (new_email == '') {
+		simpleDialog("Please enter a new email address");
+		return false;
+	}	
+	// Validate that emails match
+	if (!validateEmailMatch('add_new_email','add_new_email_dup')) {
+		return false;
+	}
+	// Make sure this email isn't the same as existing ones for this user
+	if ($('#existing_user_email').val() == new_email || ($('#existing_user_email2').val() != '' && $('#existing_user_email2').val() == new_email)
+		|| ($('#existing_user_email3').val() != '' && $('#existing_user_email3').val() == new_email)) {
+		simpleDialog("The new email address that you entered is an email already associated with this account. Please enter another email address if you would still like to add one.");
+		return false;
+	}	
+	// Save data via ajax
+	$.post(app_path_webroot+'Profile/set_up_emails.php',{ action: 'save', add_new_email: new_email },function(data){
+		var json_data = jQuery.parseJSON(data);
+		if (json_data.response != '1') { alert(woops); return false; }
+		simpleDialog(json_data.popupContent,json_data.popupTitle,null,600);
+		$('#setUpAdditionalEmails').dialog('destroy');
+	});
+}
+
+// Remove user's secondary or tertiary email from their account
+function removeAdditionalEmail(email_account) {
+	// Place email address in span/divs in dialog
+	var email = $('#user_email'+email_account+'-span').html();
+	$('#user-email-dialog').html(email);
+	// Open dialog
+	$('#removeAdditionalEmail').dialog({ bgiframe: true, modal: true, width: 600, buttons: [
+		{ text: 'Cancel',click: function(){
+			$(this).dialog('destroy');
+		}},
+		{ text: 'Remove', click: function(){
+			// Remove email from account via ajax
+			$.post(app_path_webroot+'Profile/additional_email_remove.php',{ email_account: email_account },function(data){
+				if (data=='1') {
+					$('#removeAdditionalEmail').dialog('destroy');
+					simpleDialog("The email address has now been removed from your REDCap account. The page will now reload to reflect the changes.","Email removed!",null,null,"window.location.reload();");
+				} else {
+					alert(woops);
+				}
+			});
+		}}
+	] });
+}
+
+// Validation that 2 email fields match (when forcing user to re-enter email)
+function validateEmailMatch(email1id,email2id) {
+	$('#'+email1id).val( trim($('#'+email1id).val()) );
+	$('#'+email2id).val( trim($('#'+email2id).val()) );
+	if ($('#'+email1id).val().length > 0 && $('#'+email1id).val() != $('#'+email2id).val()) {
+		// Display error dialog and put focus back on second field
+		simpleDialog("The re-entered email address did not match the first. Please re-enter your email address.",null,null,null,"$('#"+email2id+"').focus();");
+		return false;
+	}
+	return true;
+}
+
+// Test if string is a valid domain name (i.e. domain from a URL)
+function isDomainName(domain) {
+	// Set regex to be used to validate the domain
+	var dwRegex = /^([a-z0-9-]+)(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/i;
+	// Return boolean
+	return dwRegex.test(trim(domain));
+}
+
+// Check if an email address is acceptable regarding the "domain whitelist for user emails" (if enabled)
+function emailInDomainWhitelist(ob,displayErrorMsg) {
+	if (email_domain_whitelist.length > 0) {
+		var thisEmail = trim($(ob).val());
+		if (thisEmail.length < 1) return null;
+		if (displayErrorMsg == null) displayErrorMsg = true;
+		var thisEmailParts = thisEmail.split('@');
+		var thisEmailDomain = thisEmailParts[1];
+		if (!in_array(thisEmailDomain, email_domain_whitelist)) {
+			if (displayErrorMsg) {
+				var id = $(ob).attr('id');
+				var focusJS = (id == null) ? null : "$('#"+id+"').focus();";
+				simpleDialog('The domain of the email entered is invalid. (The domain name is the part of the email address after the ampersand.) '
+							+'The only acceptable domain names for email addresses are the ones listed below. You may only enter an email that ends '
+							+'in one of these domain names. Please try another email address.<br><br>Acceptable domains:<br><b>'
+							+email_domain_whitelist.join('<br>')+'</b>','"'+thisEmailDomain+'" is not an acceptable domain name for emails',null,550,focusJS);
+			}
+			return false;
+		} else {
+			return true;
+		}
+	}
+	// Return null if domain whitelist not enabled
+	return null;
+}
+// Display the pop-up for Triggers & Notifications
+function displayTrigNotifyPopup(survey_id) {
+	if (survey_id == null) survey_id = '';
+	$.post(app_path_webroot+'Surveys/triggers_notifications.php?pid='+pid+'&survey_id='+survey_id,{},function(data){
+		if (data=='[]') alert(woops);
+		else {
+			var json_data = jQuery.parseJSON(data);
+			$('#surveyNotifySetupDialog').dialog('close');
+			$('#surveyNotifySetupDialog').remove();
+			simpleDialog(json_data.content,json_data.title,'surveyNotifySetupDialog');
+		}
+	});
+}
+// Store Triggers & Notifications for end-survey emails
+function endSurvTrig(user,saveValue,survey_id) {
+	$.post(app_path_webroot+'Surveys/triggers_notifications.php?pid='+pid+'&survey_id='+survey_id,{username: user, action: 'endsurvey_email', value: (saveValue ? 1 : 0)},function(data){
+		if (data=='0') alert(woops);
+		else {
+			var ob = $('#triggerEndSurv-svd-'+survey_id+'-'+user);
+			ob.show();
+			setTimeout(function(){ ob.hide(); },2500);
+		}
+	});
+}
+
+// Add/edit/delete a template project
+function projectTemplateAction(action,project_id) {
+	// Check project_id
+	if (project_id == null) project_id = '';
+	// Set action button text and action, as well as title/description values
+	var hideChooseAnother = 0;
+	var cancelBtn  = "Close";
+	var cancelAction = "window.location.reload();";
+	var actionBtn  = null;
+	var actionSave = null;
+	var title = '';
+	var description = '';
+	if (action == 'prompt_delete' || action == 'prompt_addedit') {
+		cancelBtn  = "Cancel";
+		cancelAction = null;
+		// Set flag to hide the "choose another project" when accessing this from inside a project
+		if (action == 'prompt_addedit' && project_id != '' && page == 'index.php') {
+			hideChooseAnother = 1;
+		}
+		if (action == 'prompt_addedit' && project_id == '') {
+			// Choosing project to add, so don't show Save button
+			actionBtn = actionSave = null;
+		} else {
+			// Set secondary button text and action
+			actionBtn = (action == 'prompt_delete') ? "Remove" : "Save";
+			actionSave = (action == 'prompt_delete') ? "projectTemplateAction('delete',"+project_id+")" : "projectTemplateAction('addedit',"+project_id+")";
+		}
+	} else if (action == 'addedit') {
+		title = $('#projTemplateTitle').val();
+		description = $('#projTemplateDescription').val();
+	}
+	// Remove dialog if already exists
+	$('#projTemplateDialog').remove();
+	// Perform action via ajax
+	$.post(app_path_webroot+'ControlCenter/project_templates_ajax.php',{ action: action, project_id: project_id, title: title, description: description, hideChooseAnother: hideChooseAnother },function(data){
+		if (data=='0'){alert(woops);return;}
+		var json_data = jQuery.parseJSON(data);
+		simpleDialog(json_data.content,json_data.title,'projTemplateDialog',null,cancelAction,cancelBtn,actionSave,actionBtn);
+	});
+}
  
 
 // ****************************************************************************************************
@@ -7804,6 +7987,7 @@ var agt = navigator.userAgent.toLowerCase();
 var isIE = (agt.indexOf('msie') > -1);
 // Determine if using iOS
 var isIOS = (agt.indexOf('ipad') > -1 || agt.indexOf('iphone') > -1 || agt.indexOf('ipod') > -1);
+var isIOS5andBelow = (isIOS) ? /OS [2-5]_\d(_\d)? like Mac OS X/i.test(navigator.userAgent) : false;
 // Returns if browser is IE6
 var isIE6 = (vIE() == 6);
 // Returns if browser is IE7
@@ -7824,6 +8008,3 @@ $(function(){
 		return $.ajax({type: "POST", url: url, data: data, success: success});
 	}
 });
-
-
-jQuery('head').prepend('<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-rescalable=0">');
