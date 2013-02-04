@@ -62,11 +62,6 @@ $objHtmlPage->addStylesheet("bootstrap.css", 'screen,print'); //Added to enable 
 $objHtmlPage->addStylesheet("smoothness/jquery-ui-".JQUERYUI_VERSION.".custom.css", 'screen,print');
 $objHtmlPage->addStylesheet("style.css", 'screen,print');
 $objHtmlPage->addStylesheet("survey.css", 'screen,print');
-//$objHtmlPage->addStylesheet("pickle/button_mini_grey/_stylesheet.css", 'screen,print');
-//$objHtmlPage->addStylesheet("pickle/blue_button/_stylesheet.css", 'screen,print');
-//$objHtmlPage->addStylesheet("pickle/black_line/_stylesheet.css", 'screen,print');
-//$objHtmlPage->addStylesheet("pickle/plastic_player/_stylesheet.css", 'screen,print');
-//$objHtmlPage->addExternalJS(APP_PATH_JS . "pickle.js");
 
 //For Christa's bootsrap inclusions which come at end of page and allow popover see redcap_v45.15.2/Classes/HtmpPage.php
 
