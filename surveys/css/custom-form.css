@@ -1,0 +1,35 @@
+@charset "UTF-8";
+
+.checkbox, .radio {
+	width: 20px;
+	height: 20px;
+	padding: 0 10px 0 0;
+	background: url(../images/checkbox.png) no-repeat;
+	display: block;
+	clear: left;
+	float: left;
+	margin:3px 0 0 0;
+}
+.radio {
+	background: url(../images/radio.png) no-repeat;
+}
+.select {
+	position: absolute;
+	width: 158px; /* With the padding included, the width is 190 pixels: the actual width of the image. */
+	height: 21px;
+	padding: 0 24px 0 8px;
+	color: #fff;
+	font: 12px/21px arial,sans-serif;
+	background: url(../images/select.png) no-repeat;
+	overflow: hidden;
+}
+
+/******* yahoo player *******/
+
+/*.ywp-page-play-pause, .ywp-page-audio, .ywp-page-img-link {background:url(../images/tooltip.png) top left no-repeat; padding:5px 0 5px 35px; }*/
+a.customaudio{background:url(../images/play.png) top left no-repeat; padding:4px 0 6px 30px; }
+a.customaudio:hover {background:url(../images/pause.png) top left no-repeat;}
+a.customaudio:active {background:url(../images/pause.png) top left no-repeat;}
+a.customaudio:selected {background:url(../images/pause.png) top left no-repeat;}
+.ywp-page-play-pause ywp-page-audio ywp-link-hover ywp-page-img-link {background-image:none !important; display:none !important;}
+
