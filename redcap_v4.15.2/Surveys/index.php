@@ -56,12 +56,15 @@ if (isset($_GET['__passthru']) && !empty($_GET['__passthru']))
 
 // Class for html page display system
 $objHtmlPage = new HtmlPage();
-$objHtmlPage->addExternalJS(APP_PATH_JS . "base.js");
-$objHtmlPage->addExternalJS(APP_PATH_JS . "fontsize.js");
 $objHtmlPage->addStylesheet("bootstrap.css", 'screen,print'); //Added to enable Christa's popover
 $objHtmlPage->addStylesheet("smoothness/jquery-ui-".JQUERYUI_VERSION.".custom.css", 'screen,print');
 $objHtmlPage->addStylesheet("style.css", 'screen,print');
 $objHtmlPage->addStylesheet("survey.css", 'screen,print');
+$objHtmlPage->addStylesheet("custom-form.css", 'screen,print'); //from Christa to enlarge radios and checkboxes
+
+$objHtmlPage->addExternalJS(APP_PATH_JS . "base.js");
+$objHtmlPage->addExternalJS(APP_PATH_JS . "fontsize.js");
+$objHtmlPage->addExternalJS(APP_PATH_JS . "custom-form.js"); //add js from Christa to enlarge radios and checkboxes
 
 //For Christa's bootsrap inclusions which come at end of page and allow popover see redcap_v45.15.2/Classes/HtmpPage.php
 
@@ -910,6 +913,10 @@ $(function() {
 			$('.surveysubmit td.label').attr('colspan','2');
 		}
 	}
+	
+	//Images for checkboxes and radio button styling was added by Christa.  To implement, we need to add class="styled" for radios and checkboxes.
+	$('input:radio').addClass("styled");
+	$('input:checkbox').addClass("styled");
 });
 </script>
 
