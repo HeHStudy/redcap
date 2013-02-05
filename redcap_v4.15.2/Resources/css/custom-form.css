@@ -1,0 +1,16 @@
+@charset "UTF-8";
+
+.checkbox, .radio {
+	width: 20px;
+	height: 20px;
+	padding: 0 24px 0 0;    /*needs to be at least 24 so that when the window is resized smaller the buttons don't overlap the text */
+	background: url(images/checkbox.png) no-repeat;
+	display: block;
+	clear: left;
+	float: left;
+	margin:0 0 0 0;
+}
+.radio {
+	background: url(images/radio.png) no-repeat;
+}
+
