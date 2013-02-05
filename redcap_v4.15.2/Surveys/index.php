@@ -65,6 +65,7 @@ $objHtmlPage->addStylesheet("survey.css", 'screen,print');
 $objHtmlPage->addExternalJS(APP_PATH_JS . "base.js");
 $objHtmlPage->addExternalJS(APP_PATH_JS . "fontsize.js");
 $objHtmlPage->addExternalJS(APP_PATH_JS . "custom-form.js"); //add js from Christa to enlarge radios and checkboxes
+$objHtmlPage->addExternalJS("http://mediaplayer.yahoo.com/js");  //added so that audio hrefs play in android.
 
 //For Christa's bootsrap inclusions which come at end of page and allow popover see redcap_v45.15.2/Classes/HtmpPage.php
 
