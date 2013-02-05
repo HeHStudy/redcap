@@ -58,9 +58,9 @@ if (isset($_GET['__passthru']) && !empty($_GET['__passthru']))
 $objHtmlPage = new HtmlPage();
 $objHtmlPage->addStylesheet("bootstrap.css", 'screen,print'); //Added to enable Christa's popover
 $objHtmlPage->addStylesheet("smoothness/jquery-ui-".JQUERYUI_VERSION.".custom.css", 'screen,print');
+$objHtmlPage->addStylesheet("custom-form.css", 'screen,print'); //from Christa to enlarge radios and checkboxes
 $objHtmlPage->addStylesheet("style.css", 'screen,print');
 $objHtmlPage->addStylesheet("survey.css", 'screen,print');
-$objHtmlPage->addStylesheet("custom-form.css", 'screen,print'); //from Christa to enlarge radios and checkboxes
 
 $objHtmlPage->addExternalJS(APP_PATH_JS . "base.js");
 $objHtmlPage->addExternalJS(APP_PATH_JS . "fontsize.js");
@@ -896,7 +896,10 @@ renderPreviewPane();
 var record_exists = <?php echo $hidden_edit ?>;
 var require_change_reason = 0;
 var event_id = <?php echo $_GET['event_id'] ?>;
+
 $(function() {
+
+	
 	// Check for any reserved parameters in query string
 	checkReservedSurveyParams(new Array('<?php echo implode("','", $reservedParams) ?>'));
 	<?php if ($question_auto_numbering) { ?>
@@ -913,11 +916,13 @@ $(function() {
 			$('.surveysubmit td.label').attr('colspan','2');
 		}
 	}
-	
+
 	//Images for checkboxes and radio button styling was added by Christa.  To implement, we need to add class="styled" for radios and checkboxes.
 	$('input:radio').addClass("styled");
 	$('input:checkbox').addClass("styled");
+
 });
+
 </script>
 
 <!-- Title and/or Logo -->
