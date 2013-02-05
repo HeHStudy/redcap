@@ -851,7 +851,7 @@ A:hover {font-family: Arial; ffont-size: 15px; color: #000; text-decoration: non
 .hang2 a:active{ font-size: 12px; }
 .hang2 a:hover { font-size: 12px; }
 
-.frmrd   { text-indent: -2.3em; margin-left: 2.3em; padding:5px; font-weight: normal; font-size:18px; }
+.frmrd   { margin-left: 0; padding:5px; font-weight: normal; font-size:18px; }  /* updated for enlarged checkboxes and radio buttons from Christa */
 .frmrdh { padding: 1px 15px 1px 0px; font-weight: normal;}
 .frmrd0 {height: 0px; width: 0px; position: absolute; left: -20px;}
 
@@ -862,10 +862,10 @@ A.radio_reset:link  { font-family: Verdana; font-size: 8pt; color: #66ccff; text
 .compare A:active { font-family: Verdana; font-size: 8pt; color: #66ccff; text-decoration: none; text-align:left; }
 .compare A:hover {font-family: Verdana; font-size: 8pt; color: #000066; text-decoration: none; text-align:left; }
 
-A.cclink:link 	{font-family: Verdana; font-size: 11pt!important; text-decoration: none; color: #fff; text-align:left; padding:6px 15px; background:url(../images/reset.jpg) top center no-repeat; text-transform:capitalize; }
-A.cclink:visited 	{font-family: Verdana; font-size: 11pt!important; text-decoration: none; color: #fff; text-align:left; padding:6px 15px; background:url(../images/reset.jpg) top center no-repeat; text-transform:capitalize;}
-A.cclink:active 	{font-family: Verdana; font-size: 11pt!important; text-decoration: none; color: #fff; text-align:left; padding:6px 15px; background:url(../images/reset.jpg) top center no-repeat; text-transform:capitalize;}
-A.cclink:hover 	{font-family: Verdana; font-size: 11pt!important; text-decoration: none; color: #fff; text-align:left; padding:6px 15px; text-transform:capitalize; background:url(../images/reset_hover.jpg) top center no-repeat; }
+A.cclink:link 	 {font-family: Verdana; font-size: 11pt!important; text-decoration: none; color: #fff; text-align:left; padding:6px 15px;  margin-top:24px; background:url(../images/reset.jpg) top center no-repeat; text-transform:capitalize; }
+A.cclink:visited {font-family: Verdana; font-size: 11pt!important; text-decoration: none; color: #fff; text-align:left; padding:6px 15px;  margin-top:24px; background:url(../images/reset.jpg) top center no-repeat; text-transform:capitalize;}
+A.cclink:active  {font-family: Verdana; font-size: 11pt!important; text-decoration: none; color: #fff; text-align:left; padding:6px 15px;  margin-top:24px; background:url(../images/reset.jpg) top center no-repeat; text-transform:capitalize;}
+A.cclink:hover 	{ font-family: Verdana; font-size: 11pt!important; text-decoration: none; color: #fff; text-align:left; padding:6px 15px;  margin-top:24px; background:url(../images/reset_hover.jpg) top center no-repeat; text-transform:capitalize; }
 
 .note          { font-weight:normal;padding:2px 0 1px;color: #000066; font-size: 7pt; font-family: Verdana, Arial; width: 320px; }
 .required_cell { font-family: Verdana; font-size: 8pt; height: 18px }
