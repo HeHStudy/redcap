@@ -12,5 +12,5 @@ Aslo include a default gif in the player which overrides the play.gif, so as to 
 var YWPParams = 
 {
     autoadvance: false,
-    defaultalbumart: 'http://www.tsgc.utexas.edu/grants/graphics/blank.gif'
+    defaultalbumart: 'https://www.facebook.com/images/spacer.gif'
 };
