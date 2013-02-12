@@ -66,7 +66,8 @@ $objHtmlPage->addExternalJS(APP_PATH_JS . "base.js");
 $objHtmlPage->addExternalJS(APP_PATH_JS . "fontsize.js");
 $objHtmlPage->addExternalJS(APP_PATH_JS . "custom-form.js"); //add js from Christa to enlarge radios and checkboxes
 $objHtmlPage->addExternalJS(APP_PATH_JS . "customize_yahoo_mediaplayer.js");  //this must come before the main mediaplayer include.
-$objHtmlPage->addExternalJS("http://mediaplayer.yahoo.com/js");  //added so that audio hrefs play in android.
+//$objHtmlPage->addExternalJS("http://mediaplayer.yahoo.com/js");  //added so that audio hrefs play in android.  Commented out cause only uses http and we need https
+$objHtmlPage->addExternalJS(APP_PATH_JS . "yahoo_mediaplayer.js");   //added directly so that we don't get ssl warnings.
 
 //For Christa's bootsrap inclusions which come at end of page and allow popover see redcap_v45.15.2/Classes/HtmpPage.php
 
