@@ -111,7 +111,7 @@ class HtmlPage
                         '<meta http-equiv="Content-Language" content="en-us" />' . "\n" .
                         '<meta http-equiv="Last-Modified" content="' . gmdate("D, d M Y H:i:s") . ' GMT"/>' .  "\n" .
                         // Mobile - fix viewport so content forced to display in device screen, with no resize of content
-						((isset($isMobileDevice) && $isMobileDevice && PAGE == "surveys/index.php") ? '<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, initial-scale=1.0, user-scalable=no">'."\n" : '') .
+						((isset($isMobileDevice) && $isMobileDevice && PAGE == "surveys/index.php") ? '<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=2.0, initial-scale=1.0, user-scalable=yes">'."\n" : '') .
                         '<meta http-equiv="X-UA-Compatible" content="chrome=1">' .
 						'<title>' . $this->htmltitle . '</title>' .  "\n" .
 						'<link rel="shortcut icon" href="' . APP_PATH_IMAGES . 'favicon.ico">' . "\n";
