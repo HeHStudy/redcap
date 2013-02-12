@@ -920,8 +920,8 @@ $(function() {
 	}
 
 	//Images for checkboxes and radio button styling was added by Christa.  To implement, we need to add class="styled" for radios and checkboxes.
-	$('input:radio').addClass("styled");
-	$('input:checkbox').addClass("styled");
+	//$('input:radio').addClass("styled");
+	//$('input:checkbox').addClass("styled");
 
 });
 
