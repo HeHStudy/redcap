@@ -30,4 +30,4 @@ Thumbs.db
 
 # image files in edocs #
 ########################
-edocs/*.jpg
+edocs/*
