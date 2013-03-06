@@ -48,10 +48,9 @@
 @media 
 	only screen and (max-width: 1010px),
 	(min-device-width: 846px) and (max-device-width: 1024px)  {
-
+		td.label.quesnum {display:none !important;}
 		form#form > div > table > tbody > tr > td { width:720px !important;}
 		form#form > div > table > tbody > tr > td > div { width:720px !important; }
-		td.label.quesnum {display:none !important;}
 		td.label {width:720px !important; margin:0!important; padding:0!important; float:none!important; }
 		table#form_table{max-width:720px !important;}
 		tbody.formtbody{max-width:720px !important; }
@@ -65,10 +64,9 @@
 		
 		/* iPads */
 @media only screen and (min-device-width: 650px) and (max-device-width: 846px) {
-		
+		td.label.quesnum {display:none !important;}
 		form#form > div > table > tbody > tr > td { width:500px !important; }
 		form#form > div > table > tbody > tr > td > div { width:500px !important; }
-		td.label.quesnum {display:none !important; float:left !important;}
 		td.label {width:500px !important; margin:0!important; padding:0!important; float:none!important; }
 		table#form_table{max-width:500px !important;}
 		tbody.formtbody{max-width:500px !important;}
@@ -90,7 +88,7 @@
 			width: 300px; }
 		form#form > div > table > tbody > tr > td { width:300px !important; }
 		form#form > div > table > tbody > tr > td > div { width:300px !important; }
-		div#outer{max-width:300px !important; width:300px !important;}
+		div#outer{max-width:280px !important; width:280px !important;}
 		td.label.quesnum {display:none !important;}
 		td.label {width:300px !important; margin:0 -25px 0 0!important; padding:0!important; float:none!important;}
 		table#form_table{max-width:300px;}
@@ -101,6 +99,9 @@
 		.x-form-text{max-width:300px !important; }
 		.x-form-field{max-width:300px !important; }
 		select {max-width:300px!important;}
+		td#changeFont {display:none;}
+		.popover{max-width:200px !important;}
+
 		} 	
 
 @media only screen and (max-width: 1010px) {
@@ -116,9 +117,15 @@ form#form td+td.label * { width: auto !important; max-width: 100% !important; }
 	form#form td+td.label select { width: 80% !important; }
 body .frmrd0 { border: none !important; }
 body .jqbutton, body .jqbutton span { width: 100% !important; max-width: 100% !important; padding: 0 !important; }
-body a.cclink { clear:both !important; float:left !important; height:20px !important; overflow:visible !important; padding:9px 15px!important; }
+/*body a.cclink { clear:both !important; float:left !important; height:20px !important; overflow:visible !important; padding:9px 15px!important; }*/
+body a.cclink { display:none!important;}
 .tt{clear:both !important; float:none !important; margin-left:9px !important; }
 .jqbutton{ background:url(../images/submit2.jpg) top center no-repeat !important; margin-left:0;!important; padding-left:0!important;;}
+td#changeFont {display:none;}
+#container{padding: 5px 5px 0 15px !important;}
+.checkbox, .radio {padding: 0 30px 0 0 !important;}
+td.label.quesnum {display:none !important;}
+
 }
 
 
@@ -218,7 +225,7 @@ td.data, td.label, td.label_matrix, td.data_matrix {
 }
 td.data { width: 310px; }
 td.label { width:840px; max-width:100%; }
-/*td.label.quesnum { width:30px !important; }*/
+td.label.quesnum { width:30px !important; }
 .label a:link, .label a:visited, .label a:active, .label a:hover { font-family: Arial; }
 td.label_matrix { 
 	padding-top: 8px;
@@ -271,3 +278,5 @@ div#return_corner{
 #surveyinstr div, #surveyinstr p { margin:0; font-family:"proxima_novaregular", Arial, Helvetica, sans-serif; color:#424242; font-size:18px; line-height:26px; }
 td.quesnum { padding-right:3px;padding-left:7px; }
 td.quesnummtxchk { padding-right:3px;padding-left:7px;padding-top:4px; }
+
+body a.cclink { display:none!important;}
