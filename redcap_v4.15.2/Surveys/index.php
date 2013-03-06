@@ -60,6 +60,7 @@ $objHtmlPage->addStylesheet("bootstrap.css", 'screen,print'); //Added to enable 
 $objHtmlPage->addStylesheet("smoothness/jquery-ui-".JQUERYUI_VERSION.".custom.css", 'screen,print');
 $objHtmlPage->addStylesheet("custom-form.css", 'screen,print'); //from Christa to enlarge radios and checkboxes
 $objHtmlPage->addStylesheet("style.css", 'screen,print');
+$objHtmlPage->addStylesheet("style_heh.css", 'screen,print');
 $objHtmlPage->addStylesheet("survey.css", 'screen,print');
 
 $objHtmlPage->addExternalJS(APP_PATH_JS . "base.js");
